@@ -1,71 +1,81 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Wa-test by lcech</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="" />
+	<title>Home | Luxury Travel Site</title>
+	<link rel="stylesheet" href="./css/style.css" type="text/css" />
+	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" type="text/css" />
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<script type="text/javascript">if (window.location.pathname.substr(-10) != "index.html") window.location.pathname += "index.html";</script>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="./">Luxury Travel Site</a>
+				<ul class="nav">
+					<li class="active"><a href="./">Home</a></li>
+					<li><a href="./destinations.html">Destinations</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container" id="main">
+		<div class="title">
+			<h1>Luxury Travel Site</h1>
+		</div>
+		<p class="lead">The most luxurious way to travel the world.</p>
+		<div class="row">
+			<div id="myCarousel" class="carousel slide">
+				<div class="carousel-inner">
+					<div class="active item"><a href="./destinations.html#switzerland"><img src="./img/switzerland_huge.jpg" alt=""><div class="carousel-caption"><h4>Switzerland</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
+					<div class="item"><a href="./destinations.html#puertorico"><img src="./img/pr_huge.jpg" alt=""><div class="carousel-caption"><h4>Puerto Rico</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
+					<div class="item"><a href="./destinations.html#providence"><img src="./img/prov_huge.jpg" alt=""><div class="carousel-caption"><h4>Providence</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
+					<div class="item"><a href="./destinations.html#sanfrancisco"><img src="./img/sf_huge.jpg" alt=""><div class="carousel-caption"><h4>San Francisco</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
+				</div>
+				
+				<a class="carousel-control left" href="#myCarousel" data-slide="prev" style="top:45% !important">&lsaquo;</a>
+				<a class="carousel-control right" href="#myCarousel" data-slide="next" style="top:45% !important">&rsaquo;</a>
+			</div>
+		</div>
+		<div class="text-center"><a href="./destinations.html" class="btn btn-primary btn-large"><h1>View Destinations</h1></a></div>
+		<br />
+		<div class="row">
+			<div class="span4 text-center">
+				<h3><i class="icon-home" style="vertical-align:middle"></i> Luxurious Accommodations</h3>
+				Nunc ornare turpis eu nisi hendrerit a tempor felis ullamcorper. Integer turpis felis, consectetur quis congue tempus, porta vitae purus. Mauris condimentum orci et nunc tempor mollis.
+			</div>
+			<div class="span4 text-center">
+				<h3><i class="icon-globe" style="vertical-align:middle"></i> Incredible Locations</h3>
+				Nunc ornare turpis eu nisi hendrerit a tempor felis ullamcorper. Integer turpis felis, consectetur quis congue tempus, porta vitae purus. Mauris condimentum orci et nunc tempor mollis.
+			</div>
+			<div class="span4 text-center">
+				<h3><i class="icon-tag" style="vertical-align:middle"></i> Unbeatable Pricing</h3>
+				Nunc ornare turpis eu nisi hendrerit a tempor felis ullamcorper. Integer turpis felis, consectetur quis congue tempus, porta vitae purus. Mauris condimentum orci et nunc tempor mollis.
+			</div>
+		</div>
+		
+        <footer class="footer">
+			<p class="pull-right"><a href="#">Back to top</a></p>
+			<p>This is a demo site designed to showcase GTM.</p>
+		</footer>
+	</div>
+	<script src="./js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-33845156-1']);
+	  _gaq.push(['_trackPageview']);
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Wa-test</h1>
-        <p>Test GitHub Page to experiment with Web Analytics Codes</p>
-
-        <p class="view"><a href="https://github.com/lcech/wa-test">View the Project on GitHub <small>lcech/wa-test</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/lcech/wa-test/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/lcech/wa-test/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/lcech/wa-test">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/lcech">lcech</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+	
+	<!-- DoubleClick Floodlight Counter -->
+	<iframe src="https://fls.doubleclick.net/activityi;src=3765245;type=count817;cat=stdco826;u1=[pageCategory];u2=[visitorType];ord=1;?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+</body>
 </html>
