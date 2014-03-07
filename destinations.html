@@ -15,7 +15,7 @@
 
   ga('create', 'UA-48682569-1');
   
-  ga('set', 'dimension1', 'Kategorie');
+  ga('set', 'dimension1', '<?php $categoryName ?>');
   
   ga('send', 'pageview');
 
@@ -229,6 +229,7 @@
 	<script type="text/javascript">
 		var firstLoad = true;
 		function fireTags() {
+	        ga('send', 'pageview', document.location.pathname + document.location.hash);
 			console.log('fire tags');
 		}
 		function load(dest) {
