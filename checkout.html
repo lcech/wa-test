@@ -25,19 +25,28 @@
 
   ga('create', 'UA-48682569-1');
   ga('send', 'pageview');
-  ga('require', 'ecommerce', 'ecommerce.js');
   
-  ga('ecommerce:addItem', {
-  'id': '1234',                     // Transaction ID. Required.
-  'name': 'Week long stay',    // Product name. Required.
-  'sku': 'DD23444',                 // SKU/code.
-  'category': 'Destinations',         // Category or variation.
-  'price': '799',                 // Unit price.
-  'quantity': '#travellers'                   // Quantity.
+  </script>
+  
+  <script>
+    ga('require', 'ecommerce', 'ecommerce.js');
+    
+  	function getItemJs(&$transId, &$item) {
+  return <<<HTML
+    ga('ecommerce:addItem', {
+  'id': '$transId',
+  'name': '{$item['A week-long stay']}',
+  'sku': '{$item['sku']}',
+  'category': '{$item['category']}',
+  'price': '{$item['799']}',
+  'quantity': '{$item['#travellers']}'
 });
+HTML;
+}
+?>
 
-  ga('ecommerce:send');
-  
+    ga('ecommerce:send');
+
   </script>
     
 </head>
