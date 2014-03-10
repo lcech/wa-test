@@ -222,7 +222,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<p>This is a demo site designed to showcase GTM.</p>
 		</footer>
 	</div>
-	
+<script src="./js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/firetags.js"></script>
+	<script type="text/javascript">
+		function load(dest) {
+			$('#content > *').hide();
+			if (dest != "") {
+				$('#content-loader').show();
+				setTimeout(function(){
+					$('#content-loader').fadeOut('fast', function() {
+							$('#content-' + dest).fadeIn();
+					});
+				}, 250);
+			}
+			else
+				$('#content-chooser').fadeIn();
+			
+			fireTags(dest);
+		}
+		function processHashtag() {
+			if (window.location.hash != "")
+				load(window.location.hash.substr(1));
+			else
+				load("");
+		}
+		window.onpopstate = function(e){
+			processHashtag();
+		};
+	</script>	
 	
 </body>
 </html>
