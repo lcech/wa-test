@@ -7,16 +7,6 @@
 	<link rel="stylesheet" href="./css/style.css" type="text/css" />
 	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" type="text/css" />
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
-	<script type="text/javascript">
-        (function(w,d,t,o,l,s){
-            w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments);};
-            l=d.createElement(t);s=d.getElementsByTagName(t)[0];l.async=1;
-            l.src='/js/measure-interface.js';s.parentNode.insertBefore(l,s);
-        }(window,document,'script','measure'));
-        measure();
-    </script>
-    
-  
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -24,31 +14,13 @@
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-48682569-1');
+  
+  ga('set', 'dimension1', 'puertorico');
+  ga('set', 'dimension2', '1');
+
   ga('send', 'pageview');
   
   </script>
-  
-  <script>
-    ga('require', 'ecommerce', 'ecommerce.js');
-    
-  	function getItemJs(&$transId, &$item) {
-  return <<<HTML
-    ga('ecommerce:addItem', {
-  'id': '$transId',
-  'name': '{$item['A week-long stay']}',
-  'sku': '{$item['sku']}',
-  'category': '{$item['category']}',
-  'price': '{$item['799']}',
-  'quantity': '{$item['#travellers']}'
-});
-HTML;
-}
-?>
-
-    ga('ecommerce:send');
-
-  </script>
-    
 </head>
 <body>
 	<div class="navbar navbar-fixed-top">
@@ -119,9 +91,11 @@ HTML;
 			$('#price').html(totalCost);
 			$('#submitButton').attr('href','./thankyou.html?price=' + totalCost);
 			if (totalCost > 1000)
-				fireTags();
+				fireTags($(this).val());
 		});
-		function fireTags() {
+		function fireTags(value) {
+		    ga('set', 'dimension2', value);
+		    ga('send', 'event', 'Pocet osob', 'change', value);
 			console.log('fire tags');
 		}
 	</script>

@@ -7,16 +7,37 @@
 	<link rel="stylesheet" href="./css/style.css" type="text/css" />
 	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" type="text/css" />
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
-	<script type="text/javascript">
-        (function(w,d,t,o,l,s){
-            w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments);};
-            l=d.createElement(t);s=d.getElementsByTagName(t)[0];l.async=1;
-            l.src='/js/measure-interface.js';s.parentNode.insertBefore(l,s);
-        }(window,document,'script','measure'));
-        measure();
-    </script>
+	<script src="./js/jquery-1.7.2.min.js"></script>
 </head>
 <body>
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PQW9ZX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PQW9ZX');
+    
+    dataLayer.push({
+        event: 'transaction',
+        transactionId: '1234',
+        transactionTotal: $.param('price'),
+        transactionProducts: [{
+            sku: 'puertorico',
+            name: 'puertorico',
+            price: '799',
+            quantity: '2'
+        }, {
+            sku: 'puertorico',
+            name: 'puertorico',
+            price: '799',
+            quantity: '2'
+        }]
+    });
+    
+    </script>
+    <!-- End Google Tag Manager -->
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
@@ -57,7 +78,6 @@
 		</footer>
 	</div>
 	
-	<script src="./js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
