@@ -1,4 +1,4 @@
 function fireTags(dest) {
-    ga('send', 'pageview', "/destination/" + dest + ".html");
+    dataLayer({event: 'virtual pageview', 'virtual url': '/destination/' + dest + '.html'});
 	console.log('fire tags');
 }
