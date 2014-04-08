@@ -80,13 +80,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		</footer>
 	</div>
 	
-	<script src="./js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="./js/purl.js"></script>
 	<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
+  	var totalCost = 799 * $('#travellers').val(),
+        destination = $.url().param('destination');
+    $('#submitButton').attr('href','./thankyou.html?price=' + totalCost + '&destination=' + destination);
+    $('#content td').first().text(destination);
 		$('#travellers').on('change', function() {
-			var totalCost = 799 * $(this).val();
 			$('#price').html(totalCost);
-			$('#submitButton').attr('href','./thankyou.html?price=' + totalCost);
+			$('#submitButton').attr('href','./thankyou.html?price=' + totalCost + '&destination=' + destination);
+      $('#content td').first().text(destination);
 			if (totalCost > 1000)
 				fireTags($(this).val());
 		});
@@ -97,12 +102,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		}
 	</script>
 	<script language="JavaScript" type="text/javascript" src="./js/AppMeasurement.js"></script>
-
 	<script language="JavaScript" type="text/javascript">
-	var s=s_gi("etnhka")
-	/* You may give each page an identifying name, server, and channel on
-	the next lines. */
-	s.pageName="Checkout"
-	var s_code=s.t();if(s_code)document.write(s_code)</script>
+	var s = s_gi('etnhka');
+	s.pageName = 'Checkout';
+	var s_code = s.t();
+  if (s_code) {
+    document.write(s_code);
+  }
+  </script>
 </body>
 </html>
