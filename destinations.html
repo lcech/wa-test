@@ -53,13 +53,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<h3>Switzerland</h3>
 							Vivamus dictum dictum felis ut dignissim. Ut nibh lectus, mollis ac laoreet ut, scelerisque congue ligula. Morbi gravida felis velit.
 							<br/><br/>
-							<a class="btn btn-primary" href="#switzerland" name="switzerlandbutton" onClick="
-	var s=s_gi('etnhka');
-	s.linkTrackVars='None';
-	s.linkTrackEvents='None';
-	pageName='Switzerland';
-	s.tl(this,'o','Rozklik Destinace');
-">Details</a>
+							<a class="btn btn-primary" href="#switzerland" name="switzerlandbutton">Details</a>
 						</li>
 					</ul>
 				</div>
@@ -75,13 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<h3>Puerto Rico</h3>
 							Vivamus dictum dictum felis ut dignissim. Ut nibh lectus, mollis ac laoreet ut, scelerisque congue ligula. Morbi gravida felis velit.
 							<br/><br/>
-							<a class="btn btn-primary" href="#puertorico" name="puertoricobutton" onClick="
-	var s=s_gi('etnhka');
-	s.linkTrackVars='None';
-	s.linkTrackEvents='None';
-	pageName='PuertoRico';
-	s.tl(this,'o','Rozklik Destinace');
-">Details</a>
+							<a class="btn btn-primary" href="#puertorico" name="puertoricobutton">Details</a>
 						</li>
 						<li class="span3"><div class="thumbnail"><img src="./img/pr_3.jpg" alt=""></div></li>
 					</ul>
@@ -97,13 +85,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<h3>Providence</h3>
 							Vivamus dictum dictum felis ut dignissim. Ut nibh lectus, mollis ac laoreet ut, scelerisque congue ligula. Morbi gravida felis velit.
 							<br/><br/>
-							<a class="btn btn-primary" href="#providence" name="providencebutton" onClick="
-	var s=s_gi('etnhka');
-	s.linkTrackVars='None';
-	s.linkTrackEvents='None';
-	pageName='Providence';
-	s.tl(this,'o','Rozklik Destinace');
-">Details</a>
+							<a class="btn btn-primary" href="#providence" name="providencebutton">Details</a>
 						</li>
 						<li class="span3"><div class="thumbnail"><img src="./img/prov_2.jpg" alt=""></div></li>
 						<li class="span3"><div class="thumbnail"><img src="./img/prov_3.jpg" alt=""></div></li>
@@ -119,13 +101,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<h3>San Francisco</h3>
 							Vivamus dictum dictum felis ut dignissim. Ut nibh lectus, mollis ac laoreet ut, scelerisque congue ligula. Morbi gravida felis velit.
 							<br/><br/>
-							<a class="btn btn-primary" href="#sanfrancisco" name="sanfranciscobutton" onClick="
-	var s=s_gi('etnhka');
-	s.linkTrackVars='None';
-	s.linkTrackEvents='None';
-	pageName='SanFrancisco';
-	s.tl(this,'o','Rozklik Destinace');
-">Details</a>
+							<a class="btn btn-primary" href="#sanfrancisco" name="sanfranciscobutton">Details</a>
 						</li>
 						<li class="span3"><div class="thumbnail"><img src="./img/sf_1.jpg" alt=""></div></li>
 						<li class="span3"><div class="thumbnail"><img src="./img/sf_2.jpg" alt=""></div></li>
@@ -150,7 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</div>
 						<div style="text-align:right;">
 							<h4 style="padding-bottom:5px;">$799 / 6 Nights</h4>
-							<a href="./checkout.html" class="btn btn-primary">Book Now!</a>
+							<a href="./checkout.html?destination=switzerland" class="btn btn-primary">Book Now!</a>
 						</div>
 					</div>
 					<div class="span6">
@@ -276,12 +252,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		};
 	</script>	
 	<script language="JavaScript" type="text/javascript" src="./js/AppMeasurement.js"></script>
+  <script>
+    $('#content-chooser .btn-primary').click(function(event) {
+      var destination = event.currentTarget.hash.substring(1);
+    	s.pageName = destination;
+      s.products = ';' + destination;
+      s.events = 'prodView';
+    	s.t();
+    });
+  </script>
 
 	<script language="JavaScript" type="text/javascript">
-	var s=s_gi("etnhka")
-	/* You may give each page an identifying name, server, and channel on
-	the next lines. */
-	s.pageName="Destinations"
-	var s_code=s.t();if(s_code)document.write(s_code)</script>
+	var s = s_gi('etnhka');
+	s.pageName = 'Destinations';
+	var s_code = s.t();
+  if (s_code) {
+    document.write(s_code);
+  }
+  </script>
 </body>
 </html>
