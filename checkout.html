@@ -83,24 +83,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="./js/purl.js"></script>
     <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        var totalCost = 799 * $('#travellers').val(),
-            destination = $.url().param('destination');
-        $('#submitButton').attr('href','./thankyou.html?price=' + totalCost + '&destination=' + destination);
-        $('#content td').first().text(destination);
-        $('#travellers').on('change', function() 
-        console.log {
-            $('#price').html(totalCost);
-            $('#submitButton').attr('href','./thankyou.html?price=' + totalCost + '&destination=' + destination);
-            $('#content td').first().text(destination);
-            if (totalCost > 1000)
-                fireTags($(this).val());
+   <script type="text/javascript">
+        $(document).ready(function() {
+          var totalCost = 799 * $('#travellers').val(),
+              destination = $.url().param('destination');
+          $('#submitButton').attr('href','./thankyou.html?price=' + totalCost + '&destination=' + destination);
+          $('#content td').first().text(destination);
+          $('#travellers').on('change', function() {
+              $('#price').html(totalCost);
+              $('#submitButton').attr('href','./thankyou.html?price=' + totalCost + '&destination=' + destination);
+              $('#content td').first().text(destination);
+              if (totalCost > 1000)
+                  fireTags($(this).val());
+          });
+          function fireTags(value) {
+              ga('set', 'dimension2', value);
+              ga('send', 'event', 'Pocet osob', 'change', value);
+              console.log('fire tags');
+          }
         });
-        function fireTags(value) {
-            ga('set', 'dimension2', value);
-            ga('send', 'event', 'Pocet osob', 'change', value);
-            console.log('fire tags');
-        }
     </script>
     
     <script language="JavaScript" type="text/javascript" src="./js/AppMeasurement.js"></script>
