@@ -100,6 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           $('#submitButton').attr('href','./thankyou.html?price=' + totalCost + '&destination=' + destination);
           $('#content td').first().text(destination);
           $('#travellers').on('change', function() {
+              var totalCost = 799 * $('#travellers').val();
               $('#price').html(totalCost);
               $('#submitButton').attr('href','./thankyou.html?price=' + totalCost + '&destination=' + destination);
               $('#content td').first().text(destination);
