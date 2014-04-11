@@ -108,6 +108,7 @@
 }
         var parameterDest = getUrlParameters("destination", "", true);
         var parameterPrice = getUrlParameters("price", "", true);
+        console.log(parameterPrice)
         s.products = ';' + parameterDest; '1;' + parameterPrice;
         s.events = 'purchase';
         s.t();
