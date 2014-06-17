@@ -11,6 +11,21 @@
 <body>
 <!-- Google Tag Manager -->
 
+    <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./js/purl.js"></script>
+<script>
+    var dataLayer = [
+        'ecommerce': {
+            'checkout': {
+            'actionField': {'step': 1},
+            'products': [{
+                'name': $.url().param('destination'),
+                'id': $.url().param('destination')
+            }]
+        }
+    }];
+</script>
+
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PQW9ZX"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -80,8 +95,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </footer>
     </div>
     
-    <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="./js/purl.js"></script>
     <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
      <script language="JavaScript" type="text/javascript" src="./js/AppMeasurement.js"></script>
     <script language="JavaScript" type="text/javascript">
@@ -108,8 +121,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   fireTags($(this).val());
           });
           function fireTags(value) {
-              ga('set', 'dimension2', value);
-              ga('send', 'event', 'Pocet osob', 'change', value);
+              //ga('set', 'dimension2', value);
+              //ga('send', 'event', 'Pocet osob', 'change', value);
               console.log('fire tags');
           }
         });
