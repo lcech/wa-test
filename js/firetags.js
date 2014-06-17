@@ -3,7 +3,7 @@ dataLayer.push ({
  'ecommerce': { 
   'detail': { 
    'products': [{
-     'name': 'Schwitzerland',
+     'name': dest,
      'id': '001', 
      'category': 'Destinations/Europe'
     }]
