@@ -11,6 +11,30 @@
 </head>
 <body>
     <!-- Google Tag Manager -->
+    
+     <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./js/purl.js"></script>
+<script>
+    var dataLayer = [{
+        'ecommerce': {
+            'purchase': {
+                'actionField': {
+                    'id': 'T12345', // Transaction ID. Required for purchases and refunds.
+                    'affiliation': 'Online Store',
+                     'revenue': $.url().param('price') // Total transaction value (incl. tax and shipping)
+                },
+                'products': [{ // List of productFieldObjects.
+                     'name': $.url().param('destination'), // Name or ID is required.
+                     'id': $.url().param('destination'),
+                     'price': '799',
+                     'quantity': $.url().param('price')/799,
+                     'coupon': '' // Optional fields may be omitted or set to empty string.
+                }]
+            }
+        }
+    }];
+</script>
+    
     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PQW9ZX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,23 +42,6 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-PQW9ZX');
-    
-    dataLayer.push({
-        event: 'transaction',
-        transactionId: '1234',
-        transactionTotal: $.param('price'),
-        transactionProducts: [{
-            sku: 'puertorico',
-            name: 'puertorico',
-            price: '799',
-            quantity: '2'
-        }, {
-            sku: 'puertorico',
-            name: 'puertorico',
-            price: '799',
-            quantity: '2'
-        }]
-    });
     
     </script>
     <!-- End Google Tag Manager -->
