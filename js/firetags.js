@@ -10,9 +10,9 @@ function fireTags(dest) {
         'products': [{
           'id': dest, 
           'name': dest
-         }]
-        }
+        }]
       }
+    }
   });
   console.log('fire tags');
 }
