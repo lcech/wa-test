@@ -19,7 +19,7 @@
         'ecommerce': {
             'purchase': {
                 'actionField': {
-                    'id': 'T12345', // Transaction ID. Required for purchases and refunds.
+                    'id': Math.floor((Math.random() * 10000) + 1), // Transaction ID. Required for purchases and refunds.
                     'affiliation': 'Online Store',
                      'revenue': $.url().param('price') // Total transaction value (incl. tax and shipping)
                 },
