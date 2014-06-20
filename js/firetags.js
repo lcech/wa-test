@@ -4,7 +4,7 @@ function fireTags(dest) {
     'virtual url': '/destination/' + dest + '.html',
     'ecommerce': {
       'actionField': {
-        'list': 'Destinations'
+        'list': 'Default destination list'
       },
       'detail': {
         'products': [{
