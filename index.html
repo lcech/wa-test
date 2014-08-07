@@ -13,7 +13,37 @@
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PQW9ZX"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+<script>
+var dataLayer = [{
+    'ecommerce': {
+        'currencyCode': 'EUR', // Local currency is optional.
+        'impressions': [{
+            'name': 'switzerland', // Name or ID is required.
+            'id': 'switzerland',
+            'list': 'Homepage banner list',
+            position: 1
+
+        }, {
+            'name': 'puertorico', // Name or ID is required.
+            'id': 'puertorico',
+            'list': 'Homepage banner list',
+            position: 2
+        }, {
+            'name': 'providence', // Name or ID is required.
+            'id': 'providence',
+            'list': 'Homepage banner list',
+            position: 3
+        }, {
+            'name': 'sanfrancisco', // Name or ID is required.
+            'id': 'sanfrancisco',
+            'list': 'Homepage banner list',
+            position: 4
+        }]
+    }
+}];
+
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -40,10 +70,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="row">
             <div id="myCarousel" class="carousel slide">
                 <div class="carousel-inner">
-                    <div class="active item"><a href="./destinations.html#switzerland"><img src="./img/switzerland_huge.jpg" alt=""><div class="carousel-caption"><h4>Switzerland</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
-                    <div class="item"><a href="./destinations.html#puertorico"><img src="./img/pr_huge.jpg" alt=""><div class="carousel-caption"><h4>Puerto Rico</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
-                    <div class="item"><a href="./destinations.html#providence"><img src="./img/prov_huge.jpg" alt=""><div class="carousel-caption"><h4>Providence</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
-                    <div class="item"><a href="./destinations.html#sanfrancisco"><img src="./img/sf_huge.jpg" alt=""><div class="carousel-caption"><h4>San Francisco</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
+                    <div class="active item"><a href="./destinations.html#switzerland" name="Switzerland" onclick="dataLayer.push ({ 
+ 'ecommerce': { 
+  'detail': { 
+   'products': [{
+     'name': 'Switzerland',
+     'id': '001', 
+     'category': 'Destinations/Europe'
+    }]
+     }
+   }
+});"><img src="./img/switzerland_huge.jpg" alt=""><div class="carousel-caption"><h4>Switzerland</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
+                    <div class="item"><a href="./destinations.html#puertorico" name="PuertoRico" onclick="dataLayer.push ({ 
+ 'ecommerce': { 
+  'detail': { 
+   'products': [{
+     'name': 'Puerto Rico',
+     'id': '002', 
+     'category': 'Destinations/North America'
+    }]
+     }
+   }
+});"><img src="./img/pr_huge.jpg" alt=""><div class="carousel-caption"><h4>Puerto Rico</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
+                    <div class="item"><a href="./destinations.html#providence" name="Providence" onclick="dataLayer.push ({ 
+ 'ecommerce': { 
+  'detail': { 
+   'products': [{
+     'name': 'Providence',
+     'id': '003', 
+     'category': 'Destinations/North America'
+    }]
+     }
+   }
+});"><img src="./img/prov_huge.jpg" alt=""><div class="carousel-caption"><h4>Providence</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
+                    <div class="item"><a href="./destinations.html#sanfrancisco" name="SanFrancisco" onclick="dataLayer.push ({ 
+ 'ecommerce': { 
+  'detail': { 
+   'products': [{
+     'name': 'San Francisco',
+     'id': '004', 
+     'category': 'Destinations/North America'
+    }]
+     }
+   }
+});"><img src="./img/sf_huge.jpg" alt=""><div class="carousel-caption"><h4>San Francisco</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
                 </div>
                 
                 <a class="carousel-control left" href="#myCarousel" data-slide="prev" style="top:45% !important">&lsaquo;</a>
