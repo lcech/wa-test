@@ -113,12 +113,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         $(document).ready(function() {
           var totalCost = 799 * $('#travellers').val(),
               destination = $.url().param('destination');
-          $('#submitButton').attr('href','./thankyou.html?price=' + totalCost + '&destination=' + destination);
+          $('#submitButton').attr('href','./customer.html?price=' + totalCost + '&destination=' + destination);
           $('#content td').first().text(destination);
           $('#travellers').on('change', function() {
               var totalCost = 799 * $('#travellers').val();
               $('#price').html(totalCost);
-              $('#submitButton').attr('href','./thankyou.html?price=' + totalCost + '&destination=' + destination);
+              $('#submitButton').attr('href','./customer.html?price=' + totalCost + '&destination=' + destination);
               $('#content td').first().text(destination);
               if (totalCost > 1000)
                   fireTags($(this).val());
