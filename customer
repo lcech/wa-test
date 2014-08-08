@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <title>Confirmation | Luxury Travel Site</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+    <script src="./js/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+    <!-- Google Tag Manager -->
+    
+     <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./js/purl.js"></script>
+ <script>
+ var product = { // List of productFieldObjects.
+                     'name': $.url().param('destination'), // Name or ID is required.
+                     'id': $.url().param('destination'),
+                     'price': '799',
+                     'quantity': $.url().param('price')/799, // 799 je jednotková cena pro všechny "produkty"
+                     'coupon': '' // Optional fields may be omitted or set to empty string.
+                }
+    var cat = 'Destinations/';
+    if($.url().param('destination') === 'switzerland')
+        cat += 'Europe';
+    else 
+        cat += 'NorthAmerica';
+    
+    product.category = cat;
+    
+    var dataLayer = [{
+        'ecommerce': {
+            'purchase': {
+                'actionField': {
+                    'id': Math.floor((Math.random() * 10000) + 1), // Transaction ID. Required for purchases and refunds.
+                    'affiliation': 'Online Store',
+                     'revenue': $.url().param('price') // Total transaction value (incl. tax and shipping)
+                },
+                'products': [product]
+            }
+        }
+    }];
+    </script>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PQW9ZX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PQW9ZX');
+    
+    </script>
+    <!-- End Google Tag Manager -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="./">Luxury Travel Site</a>
+                <ul class="nav">
+                    <li><a href="./">Home</a></li>
+                    <li><a href="./destinations.html">Destinations</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="main">
+        <div class="title">
+            <h1>Luxury Travel Site</h1>
+        </div>
+        <p class="lead">The most luxurious way to travel the world.</p>
+        
+        <div class="container" id="content">
+            <div class="page-header"><h1>Reservation Complete! <small>You are almost at your destination.</small></h1></div>
+            
+            <div class="row">
+                <div class="span3">&nbsp;</div>
+                <div class="span6 text-center">
+                    <div class="alert alert-info">
+                    <h2>Thank you for reserving your trip through Luxury Travel Site for $<span id="price"></span>.  Enjoy!</h2>
+                    <script>document.getElementById('price').innerHTML = document.URL.match(/price=([^&]+)/)[1];</script>
+                    <br />
+                    <div class="text-center"><a href="./" class="btn btn-inverse"><h4>Back to Home</h4></a></div>
+                    </div>
+                </div>
+                <div class="span3">&nbsp;</div>
+            </div>
+            
+        </div>
+        <footer class="footer">
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>This is a demo site designed to showcase GTM.</p>
+        </footer>
+    </div>
+    
+    <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./js/AppMeasurement.js"></script>
+
+     <script type="text/javascript">
+     function getUrlParameters(parameter, staticURL, decode){
+   /*
+    Function: getUrlParameters
+    Description: Get the value of URL parameters either from 
+                 current URL or static URL
+    Author: Tirumal
+    URL: www.code-tricks.com
+   */
+   var currLocation = (staticURL.length)? staticURL : window.location.search,
+       parArr = currLocation.split("?")[1].split("&"),
+       returnBool = true;
+   
+   for(var i = 0; i < parArr.length; i++){
+        parr = parArr[i].split("=");
+        if(parr[0] == parameter){
+            return (decode) ? decodeURIComponent(parr[1]) : parr[1];
+            returnBool = true;
+        }else{
+            returnBool = false;            
+        }
+   }
+   
+   if(!returnBool) return false;  
+}
+        var parameterDest = getUrlParameters("destination", "", true);
+        var parameterPrice = getUrlParameters("price", "", true);
+        s.products = ';' + parameterDest + ';' + '1;' + parameterPrice;
+        s.events = 'purchase';
+        s.t();
+     </script>
+    
+    <script language="JavaScript" type="text/javascript">
+    var s=s_gi("etnhka")
+    /* You may give each page an identifying name, server, and channel on
+    the next lines. */
+    s.pageName="Thankyou"
+    var s_code=s.t();if(s_code)document.write(s_code)</script>
+</body>
+</html>
