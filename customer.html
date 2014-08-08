@@ -80,7 +80,7 @@
                     <h2>Name: Sir Tester <br>Address: Metropolis, Testershire </h2>
                     <script>document.getElementById('price').innerHTML = document.URL.match(/price=([^&]+)/)[1];</script>
                     <br />
-                    <div class="text-center"><a href="./thankyou.html?price=799" class="btn btn-inverse"><h4>Continue</h4></a></div>
+                    <div class="text-center"><a href="./thankyou.html?price=799" class="btn btn-inverse" id="continueButton"><h4>Continue</h4></a></div>
                     </div>
                 </div>
                 <div class="span3">&nbsp;</div>
@@ -100,12 +100,12 @@
         $(document).ready(function() {
           var totalCost = $.url().param('price'),
               destination = $.url().param('destination');
-          $('#submitButton').attr('href','./thankyou.html?price=' + totalCost + '&destination=' + destination);
+          $('#continueButton').attr('href','./thankyou.html?price=' + totalCost + '&destination=' + destination);
           $('#content td').first().text(destination);
           $('#travellers').on('change', function() {
               var totalCost = 799 * $('#travellers').val();
               $('#price').html(totalCost);
-              $('#submitButton').attr('href','./thankyou.html?price=' + totalCost + '&destination=' + destination);
+              $('#continueButton').attr('href','./thankyou.html?price=' + totalCost + '&destination=' + destination);
               $('#content td').first().text(destination);
               if (totalCost > 1000)
                   fireTags($(this).val());
