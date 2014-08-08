@@ -32,8 +32,8 @@
     
     var dataLayer = [{
         'ecommerce': {
-            'purchase': {
-                'actionField': {
+            'checkout': {
+                'actionField': {'step': 2,
                     'id': Math.floor((Math.random() * 10000) + 1), // Transaction ID. Required for purchases and refunds.
                     'affiliation': 'Online Store',
                      'revenue': $.url().param('price') // Total transaction value (incl. tax and shipping)
@@ -71,13 +71,13 @@
         <p class="lead">The most luxurious way to travel the world.</p>
         
         <div class="container" id="content">
-            <div class="page-header"><h1>Reservation Complete! <small>You are almost at your destination.</small></h1></div>
+            <div class="page-header"><h1>Please, check out your personal informations: <small>Is it you? Of course!</small></h1></div>
             
             <div class="row">
                 <div class="span3">&nbsp;</div>
                 <div class="span6 text-center">
                     <div class="alert alert-info">
-                    <h2>Please, check out your personal informations: <br>Name: Sir Tester <br>Address: Metropolis, Testershire </h2>
+                    <h2>Name: Sir Tester <br>Address: Metropolis, Testershire </h2>
                     <script>document.getElementById('price').innerHTML = document.URL.match(/price=([^&]+)/)[1];</script>
                     <br />
                     <div class="text-center"><a href="./thankyou.html?price=799" class="btn btn-inverse"><h4>Continue</h4></a></div>
