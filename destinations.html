@@ -81,26 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <h3>Switzerland</h3>
                             Vivamus dictum dictum felis ut dignissim. Ut nibh lectus, mollis ac laoreet ut, scelerisque congue ligula. Morbi gravida felis velit.
                             <br/><br/>
-                            <a class="btn btn-primary" href="#switzerland" name="Switzerland" onclick="
-function(productObj) {
-  dataLayer.push({
-    'event': 'productClick',
-    'ecommerce': {
-      'click': {
-        'actionField': {'list': 'Search Results'},      // Optional list property.
-        'products': [{
-          'name': productObj.name,                      // Name or ID is required.
-          'id': productObj.id,
-          'price': productObj.price,
-          'category': productObj.cat
-         }]
-       }
-     },
-     'eventCallback': function() {
-       document.location = productObj.url
-     }
-  });
-}">Details</a>
+                            <a class="btn btn-primary product-detail-link" href="#switzerland" name="Switzerland">Details</a>
                         </li>
                     </ul>
                 </div>
@@ -116,17 +97,7 @@ function(productObj) {
                             <h3>Puerto Rico</h3>
                             Vivamus dictum dictum felis ut dignissim. Ut nibh lectus, mollis ac laoreet ut, scelerisque congue ligula. Morbi gravida felis velit.
                             <br/><br/>
-                            <a class="btn btn-primary" href="#puertorico" name="PuertoRico" onclick="dataLayer.push ({ 
- 'ecommerce': { 
-  'detail': { 
-   'products': [{
-     'name': 'Puerto Rico',
-     'id': '002', 
-     'category': 'Destinations/North America'
-    }]
-     }
-   }
-});">Details</a>
+                            <a class="btn btn-primary product-detail-link" href="#puertorico" name="PuertoRico">Details</a>
                         </li>
                         <li class="span3"><div class="thumbnail"><img src="./img/pr_3.jpg" alt=""></div></li>
                     </ul>
@@ -142,17 +113,7 @@ function(productObj) {
                             <h3>Providence</h3>
                             Vivamus dictum dictum felis ut dignissim. Ut nibh lectus, mollis ac laoreet ut, scelerisque congue ligula. Morbi gravida felis velit.
                             <br/><br/>
-                            <a class="btn btn-primary" href="#providence" name="Providence" onclick="dataLayer.push ({ 
- 'ecommerce': { 
-  'detail': { 
-   'products': [{
-     'name': 'Providence',
-     'id': '003', 
-     'category': 'Destinations/North America'
-    }]
-     }
-   }
-});">Details</a>
+                            <a class="btn btn-primary product-detail-link" href="#providence" name="Providence">Details</a>
                         </li>
                         <li class="span3"><div class="thumbnail"><img src="./img/prov_2.jpg" alt=""></div></li>
                         <li class="span3"><div class="thumbnail"><img src="./img/prov_3.jpg" alt=""></div></li>
@@ -168,17 +129,7 @@ function(productObj) {
                             <h3>San Francisco</h3>
                             Vivamus dictum dictum felis ut dignissim. Ut nibh lectus, mollis ac laoreet ut, scelerisque congue ligula. Morbi gravida felis velit.
                             <br/><br/>
-                            <a class="btn btn-primary" href="#sanfrancisco" name="SanFrancisco" onclick="dataLayer.push ({ 
- 'ecommerce': { 
-  'detail': { 
-   'products': [{
-     'name': 'San Francisco',
-     'id': '004', 
-     'category': 'Destinations/North America'
-    }]
-     }
-   }
-});">Details</a>
+                            <a class="btn btn-primary product-detail-link" href="#sanfrancisco" name="SanFrancisco">Details</a>
                         </li>
                         <li class="span3"><div class="thumbnail"><img src="./img/sf_1.jpg" alt=""></div></li>
                         <li class="span3"><div class="thumbnail"><img src="./img/sf_2.jpg" alt=""></div></li>
@@ -327,6 +278,21 @@ function(productObj) {
         window.onpopstate = function(e){
             processHashtag();
         };
+        $(".product-detail-link").click(function(event){
+            //event.preventDefault();
+            dataLayer.push({
+                'event': 'productClick',
+                'ecommerce': {
+                  'click': {
+                    'actionField': {'list': 'Destinations'},      // Optional list property.
+                    'products': [{
+                      'name': event.currentTarget.href.substring(1),                      // Name or ID is required.
+                      'id': event.currentTarget.href.substring(1)
+                     }]
+                   }
+                 }
+            });
+        });
     </script>   
 </body>
 </html>
