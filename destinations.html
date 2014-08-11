@@ -286,8 +286,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   'click': {
                     'actionField': {'list': 'Destinations'},      // Optional list property.
                     'products': [{
-                      'name': event.currentTarget.href.substring(1),                      // Name or ID is required.
-                      'id': event.currentTarget.href.substring(1)
+                      'name': event.currentTarget.name.toLowerCase(),                      // Name or ID is required.
+                      'id': event.currentTarget.name.toLowerCase()
                      }]
                    }
                  }
