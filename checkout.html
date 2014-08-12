@@ -101,7 +101,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
             <div class="text-center"><a href="./customer.html?price=799" class="btn btn-primary" id="submitButton"><h3>Submit Reservation</h3></a></div>
         </div> 
-        <div class="text-center"><a href="./destinations.html" class="btn btn-primary" id="removeButton"><h3>Remove from Cart</h3></a></div>
+        <div class="text-center"><a href="./destinations.html" class="btn btn-primary remove-dest-link" id="removeButton"><h3>Remove from Cart</h3></a></div>
         </div>
         <footer class="footer">
             <p class="pull-right"><a href="#">Back to top</a></p>
@@ -111,14 +111,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
      <script language="JavaScript" type="text/javascript" src="./js/AppMeasurement.js"></script>
-    <script language="JavaScript" type="text/javascript">
-    var s = s_gi('etnhka');
-    s.pageName = 'Checkout';
-    var s_code = s.t();
-  if (s_code) {
-    document.write(s_code);
-  }
-  </script>
   
    <script type="text/javascript">
         $(document).ready(function() {
@@ -167,10 +159,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
    
    if(!returnBool) return false;  
 }
-        var parameterDest = getUrlParameters("destination", "", true);
-        s.products = ';' + parameterDest; 
-        s.events = 'scCheckout';
-        s.t();
+    
+            $(".remove-dest-link").click(function(event){
+            event.preventDefault();
+            var rem = this;
+            dataLayer.push({
+                'event': 'removeFromCart',
+                'ecommerce': {
+                  'remove': {
+                    'products': [{
+                        'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
+                        'id': event.currentTarget.name.toLowerCase()
+                     }]
+                   }
+                 }
+            });
+            dataLayer.push(function(){
+                rem.click
+            });
+        });
      </script>
     
    
