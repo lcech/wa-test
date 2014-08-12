@@ -154,20 +154,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </div>
                         <div style="text-align:right;">
                             <h4 style="padding-bottom:5px;">$799 / 6 Nights</h4>
-                            <a href="./checkout.html?destination=switzerland" class="btn btn-primary" onClick="dataLayer.push({
-'event': 'addToCart',
-  'ecommerce': {
-    'currencyCode': 'EUR',
-    'add': {       'products': [{
-       'name': 'switzerland',
-       'id': 'switzerland',
-       'price': ‘799’,
-       'category': ‘Destinations/Europe,
-       'quantity': 1
-       }]
-     }
-  }
-});">Book Now!</a>
+                            <a href="./checkout.html?destination=switzerland" class="btn btn-primary checkout-addtocart-link">Book Now!</a>
                         </div>
                     </div>
                     <div class="span6">
@@ -193,20 +180,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </div>
                         <div style="text-align:right;">
                             <h4 style="padding-bottom:5px;">$799 / 6 Nights</h4>
-                            <a href="./checkout.html?destination=puertorico" class="btn btn-primary" onClick="dataLayer.push({
-'event': 'addToCart',
-  'ecommerce': {
-    'currencyCode': 'EUR',
-    'add': {       'products': [{
-       'name': 'puertorico',
-       'id': 'puertorico',
-       'price': ‘799’,
-       'category': ‘Destinations/NorthAmerica,
-       'quantity': 1
-       }]
-     }
-  }
-});">Book Now!</a>
+                            <a href="./checkout.html?destination=puertorico" class="btn btn-primary checkout-addtocart-link">Book Now!</a>
                         </div>
                     </div>
                     <div class="span6">
@@ -232,20 +206,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </div>
                         <div style="text-align:right;">
                             <h4 style="padding-bottom:5px;">$799 / 6 Nights</h4>
-                            <a href="./checkout.html?destination=providence" class="btn btn-primary" onClick="dataLayer.push({
-'event': 'addToCart',
-  'ecommerce': {
-    'currencyCode': 'EUR',
-    'add': {       'products': [{
-       'name': 'providence',
-       'id': 'providence',
-       'price': ‘799’,
-       'category': ‘Destinations/NorthAmerica,
-       'quantity': 1
-       }]
-     }
-  }
-});">Book Now!</a>
+                            <a href="./checkout.html?destination=providence" class="btn btn-primary checkout-addtocart-link">Book Now!</a>
                         </div>
                     </div>
                     <div class="span6">
@@ -271,20 +232,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </div>
                         <div style="text-align:right;">
                             <h4 style="padding-bottom:5px;">$799 / 6 Nights</h4>
-                            <a href="./checkout.html?destination=sanfrancisco" class="btn btn-primary" onClick="dataLayer.push({
-'event': 'addToCart',
-  'ecommerce': {
-    'currencyCode': 'EUR',
-    'add': {       'products': [{
-       'name': 'sanfrancisco',
-       'id': 'sanfrancisco',
-       'price': ‘799’,
-       'category': ‘Destinations/NorthAmerica,
-       'quantity': 1
-       }]
-     }
-  }
-});">Book Now!</a>
+                            <a href="./checkout.html?destination=sanfrancisco" class="btn btn-primary checkout-addtocart-link">Book Now!</a>
                         </div>
                     </div>
                     <div class="span6">
@@ -306,6 +254,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/firetags.js"></script>
     <script type="text/javascript">
+    
+        var product = { // List of productFieldObjects.
+                     'name': event.currentTarget.name.toLowerCase(), // Name or ID is required.
+                     'id': event.currentTarget.name.toLowerCase(),
+                     'coupon': Math.floor((Math.random() * 1000) + 1) // Optional fields may be omitted or set to empty string.
+                }
+        var cat = 'Destinations/';
+        if($.window.location.hash.substr(1) === 'switzerland')
+            cat += 'Europe';
+        else 
+            cat += 'NorthAmerica';
+        
+        product.category = cat;
+    
         function load(dest) {
             $('#content > *').hide();
             if (dest != "") {
@@ -337,10 +299,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 'ecommerce': {
                   'click': {
                     'actionField': {'list': 'Default destination list'},      // Optional list property.
-                    'products': [{
-                      'name': event.currentTarget.name.toLowerCase(),                      // Name or ID is required.
-                      'id': event.currentTarget.name.toLowerCase()
-                     }]
+                    'products': [product]
+                   }
+                 }
+            });
+        });
+        $(".checkout-addtocart-link").click(function(event){
+            //event.preventDefault();
+            dataLayer.push({
+                'event': 'addToCart',
+                'ecommerce': {
+                  'currencyCode': 'EUR',
+                    'add': {                                // 'add' actionFieldObject measures.
+                      'products': [product]
                    }
                  }
             });
