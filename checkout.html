@@ -14,16 +14,38 @@
     <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="./js/purl.js"></script>
 <script>
+
+        var product = { // List of productFieldObjects.
+                    'name': $.url().param('destination'),
+                    'id': $.url().param('destination'),
+                    'coupon': Math.floor((Math.random() * 1000) + 1) // Optional fields may be omitted or set to empty string.
+                }
+        var cat = 'Destinations/';
+        if($.url().param('destination') === 'switzerland')
+            cat += 'Europe';
+        else 
+            cat += 'NorthAmerica';
+        
+        product.category = cat;
+
     var dataLayer = [{
         'ecommerce': {
             'checkout': {
                 'actionField': {'step': 1},
-                'products': [{
-                    'name': $.url().param('destination'),
-                    'id': $.url().param('destination')
-                }]
+                'products': [product]
             }
         }
+    }];
+        
+    var dataLayer = [{
+        'event': 'addToCart',
+        'ecommerce': {
+                 'currencyCode': 'EUR',
+                 'add': {                                // 'add' actionFieldObject measures.
+                        'products': [product]
+                  }
+        }
+
     }];
 </script>
 
