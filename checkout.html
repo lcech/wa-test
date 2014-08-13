@@ -184,7 +184,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             console.log('DRUNK PEOOPLEZ WANTZ FASTER GITHUB PAGEZZ!!!!1111oneoneone. To here, actually:', event.target.href);
             click_measured = true;
             $(".remove-dest-link").trigger('click');
-            window.location.href = event.target.href;
+            window.location.href = $(event.target).attr("href");
             }
             
         });
