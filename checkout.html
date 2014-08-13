@@ -36,6 +36,25 @@
             }
         }
     }];
+    
+                $(".remove-dest-link").click(function(event){
+            event.preventDefault();
+            var rem = this;
+            dataLayer.push({
+                'event': 'removeFromCart',
+                'ecommerce': {
+                  'remove': {
+                    'products': [{
+                        'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
+                        'id': event.currentTarget.name.toLowerCase()
+                     }]
+                   }
+                 }
+            });
+            dataLayer.push(function(){
+                rem.click
+            });
+        });
 </script>
 
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PQW9ZX"
@@ -160,24 +179,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
    if(!returnBool) return false;  
 };
     
-            $(".remove-dest-link").click(function(event){
-            event.preventDefault();
-            var rem = this;
-            dataLayer.push({
-                'event': 'removeFromCart',
-                'ecommerce': {
-                  'remove': {
-                    'products': [{
-                        'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
-                        'id': event.currentTarget.name.toLowerCase()
-                     }]
-                   }
-                 }
-            });
-            dataLayer.push(function(){
-                rem.click
-            });
-        });
      </script>
     
    
