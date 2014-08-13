@@ -159,7 +159,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
    
    if(!returnBool) return false;  
 };
-        click_measured = false;
+        var click_measured = false;
         $(".remove-dest-link").click(function(event){
             if (click_measured === false) {
             event.preventDefault();
@@ -183,7 +183,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             // });
             console.log('DRUNK PEOOPLEZ WANTZ FASTER GITHUB PAGEZZ!!!!1111oneoneone');
             click_measured = true;
-            $(this).trigger('click');
+            $(event.target).trigger('click');
             }
             
         });
