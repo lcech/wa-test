@@ -17,8 +17,7 @@
 
         var product = { // List of productFieldObjects.
                     'name': $.url().param('destination'),
-                    'id': $.url().param('destination'),
-                    'coupon': Math.floor((Math.random() * 1000) + 1) // Optional fields may be omitted or set to empty string.
+                    'id': $.url().param('destination')
                 }
         var cat = 'Destinations/';
         if($.url().param('destination') === 'switzerland')
