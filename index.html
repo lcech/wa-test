@@ -70,50 +70,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="row">
             <div id="myCarousel" class="carousel slide">
                 <div class="carousel-inner">
-                    <div class="active item"><a href="./destinations.html#switzerland" name="Switzerland" onclick="dataLayer.push ({ 
- 'ecommerce': { 
-  'detail': { 
-   'products': [{
-     'name': 'Switzerland',
-     'id': '001', 
-     'category': 'Destinations/Europe'
-    }]
-     }
-   }
-});"><img src="./img/switzerland_huge.jpg" alt=""><div class="carousel-caption"><h4>Switzerland</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
-                    <div class="item"><a href="./destinations.html#puertorico" name="PuertoRico" onclick="dataLayer.push ({ 
- 'ecommerce': { 
-  'detail': { 
-   'products': [{
-     'name': 'Puerto Rico',
-     'id': '002', 
-     'category': 'Destinations/North America'
-    }]
-     }
-   }
-});"><img src="./img/pr_huge.jpg" alt=""><div class="carousel-caption"><h4>Puerto Rico</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
-                    <div class="item"><a href="./destinations.html#providence" name="Providence" onclick="dataLayer.push ({ 
- 'ecommerce': { 
-  'detail': { 
-   'products': [{
-     'name': 'Providence',
-     'id': '003', 
-     'category': 'Destinations/North America'
-    }]
-     }
-   }
-});"><img src="./img/prov_huge.jpg" alt=""><div class="carousel-caption"><h4>Providence</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
-                    <div class="item"><a href="./destinations.html#sanfrancisco" name="SanFrancisco" onclick="dataLayer.push ({ 
- 'ecommerce': { 
-  'detail': { 
-   'products': [{
-     'name': 'San Francisco',
-     'id': '004', 
-     'category': 'Destinations/North America'
-    }]
-     }
-   }
-});"><img src="./img/sf_huge.jpg" alt=""><div class="carousel-caption"><h4>San Francisco</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
+                    <div class="active item"><a href="./destinations.html#switzerland" name="Switzerland" class="img-btn product-detail-link"><img src="./img/switzerland_huge.jpg" alt=""><div class="carousel-caption"><h4>Switzerland</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
+                    <div class="item"><a href="./destinations.html#puertorico" name="PuertoRico" class="img-btn product-detail-link"><img src="./img/pr_huge.jpg" alt=""><div class="carousel-caption"><h4>Puerto Rico</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
+                    <div class="item"><a href="./destinations.html#providence" name="Providence" class="img-btn product-detail-link"><img src="./img/prov_huge.jpg" alt=""><div class="carousel-caption"><h4>Providence</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
+                    <div class="item"><a href="./destinations.html#sanfrancisco" name="SanFrancisco" class="img-btn product-detail-link"><img src="./img/sf_huge.jpg" alt=""><div class="carousel-caption"><h4>San Francisco</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></a></div>
                 </div>
                 
                 <a class="carousel-control left" href="#myCarousel" data-slide="prev" style="top:45% !important">&lsaquo;</a>
@@ -145,13 +105,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     <script src="./js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
-    <script language="JavaScript" type="text/javascript" src="./js/AppMeasurement.js"></script>
 
     <script language="JavaScript" type="text/javascript">
-    var s=s_gi("etnhka")
-    /* You may give each page an identifying name, server, and channel on
-    the next lines. */
-    s.pageName="Homepage"
-    var s_code=s.t();if(s_code)document.write(s_code)</script>
+    $(".product-detail-link").click(function(event){
+					dataLayer.push({
+                'event': 'productClick',
+                'ecommerce': {
+                  'click': {
+                    'actionField': {'list': 'Homepage banner list'},      // Optional list property.
+                    'products': [{
+                        'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
+                        'id': event.currentTarget.name.toLowerCase()
+                     }]
+                   }
+                 }
+            });
+    window.location.href = $(".remove-dest-link").attr("href");
+     });
+
+    </script>
 </body>
 </html>
