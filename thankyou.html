@@ -44,7 +44,7 @@
                      'affiliation': 'Online Store',
                      'tax': $.url().param('price')*15/100, // 15% daň
                      'shipping': '3.99',
-                     'revenue': $.url().param('price')+$.url().param('price')*15/100+3.99, // Total transaction value (incl. tax and shipping) Maybe doesn't work..
+                     'revenue': Number($.url().param('price')) + Number($.url().param('price')*15/100) + Number(3.99), // Total transaction value (incl. tax and shipping) Maybe doesn't work..
                      'coupon': [coupon]
                 },
                 'products': [product]
