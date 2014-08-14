@@ -29,11 +29,11 @@
     
     product.category = cat;
     
-    var coupon = ‘’;
+    var coupon = '';
     if ($.browser.msie)  // Sort of random coupon adding based on browser type.
-         coupon += ‘summer_sale’;
+         coupon += 'summer_sale';
     else
-         coupon += ‘’;
+         coupon += '';
     // product.coupon = coupon; ?? or ecommerce.purchase.actionField.coupon = coupon ?
     
     var dataLayer = [{
@@ -43,7 +43,7 @@
                      'id': Math.floor((Math.random() * 10000) + 1), // Transaction ID. Required for purchases and refunds.
                      'affiliation': 'Online Store',
                      'tax': $.url().param('price')*15/100, // 15% daň
-                     'shipping': ‘3.99’,
+                     'shipping': '3.99',
                      'revenue': $.url().param('price')+$.url().param('price')*15/100+3.99, // Total transaction value (incl. tax and shipping) Maybe doesn't work..
                      'coupon': [coupon]
                 },
