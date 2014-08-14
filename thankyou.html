@@ -19,8 +19,7 @@
                      'name': $.url().param('destination'), // Name or ID is required.
                      'id': $.url().param('destination'),
                      'price': '799',
-                     'quantity': $.url().param('price')/799, // 799 je jednotková cena pro všechny "produkty"
-                     'coupon': '' // Optional fields may be omitted or set to empty string.
+                     'quantity': $.url().param('price')/799 // 799 je jednotková cena pro všechny "produkty"
                 }
     var cat = 'Destinations/';
     if($.url().param('destination') === 'switzerland')
@@ -30,13 +29,23 @@
     
     product.category = cat;
     
+    var coupon = ‘’;
+    if ($.browser.msie)  // Sort of random coupon adding based on browser type.
+         coupon += ‘summer_sale’;
+    else
+         coupon += ‘’;
+    // product.coupon = coupon; ?? or ecommerce.purchase.actionField.coupon = coupon ?
+    
     var dataLayer = [{
         'ecommerce': {
             'purchase': {
                 'actionField': {
-                    'id': Math.floor((Math.random() * 10000) + 1), // Transaction ID. Required for purchases and refunds.
-                    'affiliation': 'Online Store',
-                     'revenue': $.url().param('price') // Total transaction value (incl. tax and shipping)
+                     'id': Math.floor((Math.random() * 10000) + 1), // Transaction ID. Required for purchases and refunds.
+                     'affiliation': 'Online Store',
+                     'tax': $.url().param('price')*15/100, // 15% daň
+                     'shipping': ‘3.99’,
+                     'revenue': $.url().param('price')+$.url().param('price')*15/100+3.99, // Total transaction value (incl. tax and shipping) Maybe doesn't work..
+                     'coupon': [coupon]
                 },
                 'products': [product]
             }
