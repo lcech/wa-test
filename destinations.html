@@ -295,17 +295,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             });
         });
         $(".checkout-addtocart-link").click(function(event){
-					dataLayer.push({
-                'event': 'addToCart',
-                'ecommerce': {
-                  'add': {
-                    'products': [{
-                        'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
-                        'id': event.currentTarget.name.toLowerCase()
-                     }]
-                   }
-                 }
-            });
+		dataLayer.push({
+                	'event': 'addToCart',
+                	'ecommerce': {
+                	 	'currencyCode': 'EUR',
+                  		'add': {
+                    			'products': [{
+                        			'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
+                        			'id': event.currentTarget.name.toLowerCase()
+                     			}]
+                   		}
+                 	}
+            	});
         window.location.href = $(".checkout-addtocart-link").attr("href");
         });
     </script>   
