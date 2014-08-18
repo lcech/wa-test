@@ -159,38 +159,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
    
    if(!returnBool) return false;  
 };
+   
     
-    var click_measured = false;
-        $(".remove-dest-link").click(function(event){
-        if (click_measured === false) {
-        event.preventDefault();
-            // event.stopPropagation();
-            
-            // var rem = this;
-            dataLayer.push({
-                'event': 'removeFromCart',
-                'ecommerce': {
-                  'remove': {
-                    'products': [{
-                        'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
-                        'id': event.currentTarget.name.toLowerCase()
-                     }]
-                   }
-                 }
-            }, function() {
-+                click_measured = true;
-+                window.location.href = $(".remove-dest-link").attr("href");
-            });
-            // console.log('data pushed to dataLayer');
-            // dataLayer.push(function(){
-            //     rem.click
-            // });
-             console.log('DRUNK PEOOPLEZ WANTZ FASTER GITHUB PAGEZZ!!!!1111oneoneone. To here, actually:', event.target.href);
-            // $(".remove-dest-link").trigger('click');
-             }
-            
-        });
-        // $(this).trigger('click');
+$(".remove-dest-link").click(function(event){
+    event.preventDefault();
+//         dataLayer.push({callback: function() {
+//    alert(Calling Callback);
+//  });
+    dataLayer.push({
+        'event': 'removeFromCart',
+        'ecommerce': {
+            'remove': {
+                'products': [{
+                    'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
+                    'id': event.currentTarget.name.toLowerCase()
+                 }]
+            }
+        }
+        'callback': function() {
+            window.location.href = $(".remove-dest-link").attr("href");
+            console.log('Callback called');
+        }
+    })
+});
     
      
      </script>
