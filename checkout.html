@@ -171,8 +171,8 @@ $(".remove-dest-link").click(function(event){
         'ecommerce': {
             'remove': {
                 'products': [{
-                    'name': $.event.url().param('destination'),         // Name or ID is required.
-                    'id': $.event.url().param('destination')
+                    'name': $.url().param('destination'),         // Name or ID is required.
+                    'id': $.url().param('destination')
                  }]
             }
         },
