@@ -171,8 +171,8 @@ $(".remove-dest-link").click(function(event){
         'ecommerce': {
             'remove': {
                 'products': [{
-                    'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
-                    'id': event.currentTarget.name.toLowerCase()
+                    'name': event.$.url().param('destination'),         // Name or ID is required.
+                    'id': event.$.url().param('destination')
                  }]
             }
         },
@@ -180,7 +180,7 @@ $(".remove-dest-link").click(function(event){
             window.location.href = $(".remove-dest-link").attr("href");
             console.log('Callback called');
         }
-    })
+    });
 });
     
      
