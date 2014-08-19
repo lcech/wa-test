@@ -168,14 +168,15 @@ $(".remove-dest-link").click(function(event){
 //         dataLayer.push({callback: function() {
 //    alert(Calling Callback);
 //  });
-    console.log('clicked');
+    var destination = $.url().param('destination');
+    console.log('clicked', destination§);
     dataLayer.push({
             'event': 'removeFromCart',
             'ecommerce': {
               'remove': {
                 'products': [{
-                    'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
-                    'id': event.currentTarget.name.toLowerCase()
+                    'name': destination,         // Name or ID is required.
+                    'id': destination
                  }]
                }
             }
