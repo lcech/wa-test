@@ -15,6 +15,10 @@
     <script type="text/javascript" src="./js/purl.js"></script>
 <script>
 
+window.hitCallback = window.hitThatCallback = window.callback = function () {
+    alert('global callback called');
+}
+
         var product = { // List of productFieldObjects.
                     'name': $.url().param('destination'),
                     'id': $.url().param('destination')
