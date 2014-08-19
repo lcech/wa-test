@@ -195,6 +195,7 @@ $(".remove-dest-link").click(function(event){
             }
     }, function() {
         console.log('called back as a second argument to dataLayer');
+        console.log('move on to', $(".remove-dest-link").attr("href"));
         window.location.href = $(".remove-dest-link").attr("href");
     }
             
