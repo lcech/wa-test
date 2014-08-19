@@ -123,9 +123,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               $('#price').html(totalCost);
               $('#submitButton').attr('href','./customer.html?price=' + totalCost + '&destination=' + destination);
               $('#content td').first().text(destination);
-              if (totalCost > 1000)
-                  fireTags($(this).val());
-          });
+              
+          if (totalCost > 1000) {
+                 fireTags($(this).val());
+            }
           function fireTags(value) {
               //ga('set', 'dimension2', value);
               //ga('send', 'event', 'Pocet osob', 'change', value);
