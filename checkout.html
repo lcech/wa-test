@@ -175,12 +175,12 @@ $(".remove-dest-link").click(function(event){
                     'id': $.url().param('destination')
                  }]
             }
-        },
+        }
+    }),
         'callback': function() {
             window.location.href = $(".remove-dest-link").attr("href");
             console.log('Callback called');
         }
-    });
 });
     
      
