@@ -170,10 +170,9 @@ $(".remove-dest-link").click(function(event){
 //  });
     console.log('clicked');
     dataLayer.push({
-            'event': 'productClick',
+            'event': 'removeFromCart',
             'ecommerce': {
-              'click': {
-                'actionField': {'list': 'Default destination list'},      // Optional list property.
+              'remove': {
                 'products': [{
                     'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
                     'id': event.currentTarget.name.toLowerCase()
