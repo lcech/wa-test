@@ -170,19 +170,30 @@ $(".remove-dest-link").click(function(event){
 //  });
     console.log('clicked');
     dataLayer.push({
-        'event': 'removeFromCart',
-        'ecommerce': {
-            'remove': {
+            'event': 'productClick',
+            'ecommerce': {
+              'click': {
+                'actionField': {'list': 'Default destination list'},      // Optional list property.
                 'products': [{
-                    'name': 'product name', //$.url().param('destination'),         // Name or ID is required.
-                    'id': 'product id' //$.url().param('destination')
+                    'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
+                    'id': event.currentTarget.name.toLowerCase()
                  }]
+               }
             }
-        },
-        'callback': function() {
-//            window.location.href = $(".remove-dest-link").attr("href");
-            console.log('Callback called');
-        }
+            
+//         'event': 'removeFromCart',
+//         'ecommerce': {
+//             'remove': {
+//                 'products': [{
+//                     'name': 'product name', //$.url().param('destination'),         // Name or ID is required.
+//                     'id': 'product id' //$.url().param('destination')
+//                  }]
+//             }
+//         },
+//         'callback': function() {
+// //            window.location.href = $(".remove-dest-link").attr("href");
+//             console.log('Callback called');
+//         }
     });
 });
     
