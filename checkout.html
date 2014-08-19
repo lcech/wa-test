@@ -179,6 +179,9 @@ $(".remove-dest-link").click(function(event){
                     'id': destination
                  }]
                }
+            },
+            'callback': function() {
+                console.log('call me maybe');
             }
             
 //         'event': 'removeFromCart',
