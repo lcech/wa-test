@@ -39,7 +39,31 @@ var dataLayer = [{
             'id': 'sanfrancisco',
             'list': 'Homepage banner list',
             position: 4
-        }]
+        }],
+        'promoView': {
+		'promotions': [{	// Array of promoFieldObjects.
+			'id': 'sanfrancisco', 	// ID or Name is required.
+			'name': 'sanfrancisco',
+			'creative': 'street_photo1',
+			'position': 'carousel_slide_slot4'
+		}, {
+			'id': 'providence',
+			'name': 'providence',
+			'creative': 'wall_photo1',
+			'position': 'carousel_slide_slot3'
+		}, {
+			'id': 'puertorico',
+			'name': 'puertorico',
+			'creative': 'beach_photo1',
+			'position': 'carousel_slide_slot2'
+		}, {
+			'id': 'switzerland',
+			'name': 'switzerland',
+			'creative': 'church_photo1',
+			'position': 'carousel_slide_slot1'
+		}]
+	}
+
     }
 }];
 
@@ -118,6 +142,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         'id': event.currentTarget.name.toLowerCase()
                      }]
                    }
+                 },
+                 'event': 'promotionClick',
+                 'ecommerce': {
+                 	'promoClick': {
+                 		'promotions': [{
+                 			'id': event.currentTarget.name.toLowerCase(),
+                 			'name': event.currentTarget.toLowerCase(),
+                 			'creative':    //add some code
+                 			'position':    //add some code
+                 		}]
+                 	}
                  }
             });
     window.location.href = $(".remove-dest-link").attr("href");
