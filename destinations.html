@@ -295,7 +295,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             });
         });
         $(".checkout-addtocart-link").click(function(event){
-        	event.preventDefault();
+        //	event.preventDefault();
 		dataLayer.push({
                 	'event': 'addToCart',
                 	'ecommerce': {
@@ -308,10 +308,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                    		}
                  	}
             	});
-        	'callback': function() {
-         		window.location = $(".checkout-addtocart-link");
-         		console.log('Callback called');
-        	}
+            	window.location.href = $(".checkout-addtocart-link").attr("href");
+        //	'callback': function() {
+        //		window.location = $(".checkout-addtocart-link");
+        // 		console.log('Callback called');
+        //	}
         });
     </script>   
 </body>
