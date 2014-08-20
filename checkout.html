@@ -15,10 +15,6 @@
     <script type="text/javascript" src="./js/purl.js"></script>
 <script>
 
-window.hitCallback = window.hitThatCallback = window.callback = function () {
-    alert('global callback called');
-}
-
         var product = { // List of productFieldObjects.
                     'name': $.url().param('destination'),
                     'id': $.url().param('destination')
@@ -167,11 +163,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 };
    
     
-$(".remove-dest-link").click(function(event){
+$('.remove-dest-link').click(function (event) {
     event.preventDefault();
-//         dataLayer.push({callback: function() {
-//    alert(Calling Callback);
-//  });
     var destination = $.url().param('destination');
     console.log('clicked', destination);
     dataLayer.push({
@@ -188,7 +181,7 @@ $(".remove-dest-link").click(function(event){
             alert('hitCallback');
             window.location = $(event.currentTarget).attr('href');
         }
-    );
+    });
 });
     
      
