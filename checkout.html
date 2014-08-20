@@ -184,35 +184,11 @@ $(".remove-dest-link").click(function(event){
                  }]
                }
             },
-            'callback': function() {
-                alert('called back');
-            },
             'hitCallback': function() {
                 alert('hitCallback');
-            },
-            'hitThatCallback': function() {
-                alert('hitThatCallback');
-            }
-    }, function() {
-        console.log('called back as a second argument to dataLayer');
-        console.log('move on to', $(".remove-dest-link").attr("href"));
-        window.location.href = $(".remove-dest-link").attr("href");
-    }
-            
-//         'event': 'removeFromCart',
-//         'ecommerce': {
-//             'remove': {
-//                 'products': [{
-//                     'name': 'product name', //$.url().param('destination'),         // Name or ID is required.
-//                     'id': 'product id' //$.url().param('destination')
-//                  }]
-//             }
-//         },
-//         'callback': function() {
-// //            window.location.href = $(".remove-dest-link").attr("href");
-//             console.log('Callback called');
-//         }
-    );
+                window.location = $(event.currentTarget).attr("href");
+                
+            });
 });
     
      
