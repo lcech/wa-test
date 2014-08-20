@@ -175,20 +175,20 @@ $(".remove-dest-link").click(function(event){
     var destination = $.url().param('destination');
     console.log('clicked', destination);
     dataLayer.push({
-            'event': 'removeFromCart',
-            'ecommerce': {
-              'remove': {
-                'products': [{
-                    'name': destination,         // Name or ID is required.
-                    'id': destination
-                 }]
-               }
-            },
-            'hitCallback': function() {
-                alert('hitCallback');
-                window.location = $(event.currentTarget).attr("href");
-                
-            });
+        'event': 'removeFromCart',
+        'ecommerce': {
+          'remove': {
+            'products': [{
+                'name': destination,         // Name or ID is required.
+                'id': destination
+             }]
+           }
+        },
+        'hitCallback': function() {
+            alert('hitCallback');
+            window.location = $(event.currentTarget).attr('href');
+        }
+    );
 });
     
      
