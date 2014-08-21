@@ -132,7 +132,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <script language="JavaScript" type="text/javascript">
     $(".product-detail-link").click(function(event){
-            event.preventDefault();
 	    dataLayer.push({
                 'event': 'productClick',
                 'ecommerce': {
@@ -150,7 +149,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                  	'promoClick': {
                  		'promotions': [{
                  			'id': event.currentTarget.name.toLowerCase(),
-                 			'name': event.currentTarget.toLowerCase(),
+                 			'name': event.currentTarget.name.toLowerCase(),
                  			'creative': '',    //add some code
                  			'position': ''   //add some code
                  		}]
