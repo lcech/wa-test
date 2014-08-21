@@ -14,6 +14,12 @@
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PQW9ZX"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
+var cat = 'Destinations/';
+    if(event.currentTarget.name.toLowerCase() === 'switzerland')
+        cat += 'Europe';
+    else 
+        cat += 'NorthAmerica';
+
 var dataLayer = [{
     'ecommerce': {
         'currencyCode': 'EUR', // Local currency is optional.
@@ -279,12 +285,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         window.onpopstate = function(e){
             processHashtag();
         };
-        
-    var cat = 'Destinations/';
-    if(event.currentTarget.name.toLowerCase() === 'switzerland')
-        cat += 'Europe';
-    else 
-        cat += 'NorthAmerica';
         
         $(".product-detail-link").click(function(event){
             //event.preventDefault();
