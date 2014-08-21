@@ -15,7 +15,7 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
 var cat = 'Destinations/';
-    if(event.currentTarget.name.toLowerCase() === 'switzerland')
+    if(window.location.hash.substr(1) === 'switzerland')
         cat += 'Europe';
     else 
         cat += 'NorthAmerica';
