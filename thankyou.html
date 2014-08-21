@@ -32,6 +32,10 @@
     var coupon = '';
     if ($.browser.safari)  // Sort of random coupon adding based on browser type.
          coupon += 'summer_sale';
+    if ($.browser.msie)  // Sort of random coupon adding based on browser type.
+         coupon += 'sale_for_first_time_buyers';
+    if ($.browser.mozilla)  // Sort of random coupon adding based on browser type.
+         coupon += 'special_offer_for_families';
     else
          coupon += '';
     // product.coupon = coupon; ?? or ecommerce.purchase.actionField.coupon = coupon ?
