@@ -132,7 +132,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <script language="JavaScript" type="text/javascript">
     $(".product-detail-link").click(function(event){
-					dataLayer.push({
+            event.preventDefault();
+	    dataLayer.push({
                 'event': 'productClick',
                 'ecommerce': {
                   'click': {
@@ -143,18 +144,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                      }]
                    }
                  }
-//                 ,
-//                 'event': 'promotionClick',
-//                 'ecommerce': {
-//                 	'promoClick': {
-//                 		'promotions': [{
-//                 			'id': event.currentTarget.name.toLowerCase(),
-//                 			'name': event.currentTarget.toLowerCase(),
-//                 			'creative': '',    //add some code
-//                 			'position': ''   //add some code
-//                 		}]
-//                 	}
-//                 }
+                 ,
+                 'event': 'promotionClick',
+                 'ecommerce': {
+                 	'promoClick': {
+                 		'promotions': [{
+                 			'id': event.currentTarget.name.toLowerCase(),
+                 			'name': event.currentTarget.toLowerCase(),
+                 			'creative': '',    //add some code
+                 			'position': ''   //add some code
+                 		}]
+                 	}
+                 }
             });
     window.location.href = $(".product-detail-link").attr("href");
      });
