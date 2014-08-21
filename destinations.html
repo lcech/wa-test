@@ -279,6 +279,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         window.onpopstate = function(e){
             processHashtag();
         };
+        
+    var cat = 'Destinations/';
+    if(event.currentTarget.name.toLowerCase() === 'switzerland')
+        cat += 'Europe';
+    else 
+        cat += 'NorthAmerica';
+        
         $(".product-detail-link").click(function(event){
             //event.preventDefault();
             dataLayer.push({
@@ -288,7 +295,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     'actionField': {'list': 'Default destination list'},      // Optional list property.
                     'products': [{
                         'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
-                        'id': event.currentTarget.name.toLowerCase()
+                        'id': event.currentTarget.name.toLowerCase(),
+                        'category': [cat]
                      }]
                    }
                  }
@@ -304,7 +312,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           'add': {
             'products': [{
                 'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
-                'id': event.currentTarget.name.toLowerCase()
+                'id': event.currentTarget.name.toLowerCase(),
+                'category': [cat]
              }]
            }
         },
