@@ -9,7 +9,8 @@ function fireTags(dest) {
       'detail': {
         'products': [{
           'id': dest, 
-          'name': dest
+          'name': dest,
+          'category': cat
         }]
       }
     }
