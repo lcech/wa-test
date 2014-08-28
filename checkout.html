@@ -124,11 +124,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               $('#submitButton').attr('href','./customer.html?price=' + totalCost + '&destination=' + destination);
               $('#content td').first().text(destination);
               
-          if (totalCost > 1000) {
+              if (totalCost > 1000) {
                  fireTags($(this).val());
-            }
-            function fireTags(value) {
-              dataLayer.push ({ 
+              }
+              function fireTags(value) {
+                dataLayer.push ({ 
                   'event': 'travellers number changed',
         //        'virtual url': '/destination/' + dest + '.html',
         //        'ecommerce': {
@@ -139,9 +139,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         //            'products': [product]
         //          }
         //        }
-              });
-              console.log('fire tags');
-            }
+                });
+                console.log('fire tags');
+              }
+          }
+        );
             
   //          function fireTags(value) {
               //ga('set', 'dimension2', value);
@@ -153,7 +155,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         //  }
       //  });
        // });
-          }
+          
     </script>
     
     <script type="text/javascript">
