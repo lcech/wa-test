@@ -75,7 +75,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </tr></thead>
                 <tbody>
                     <tr>
-                        <td>A week-long stay in one of the most luxurious places ever.</td>
+                        <td>A week-long stay in one of the most luxurious places ever. Really.</td>
                         <td>6 nights</td>
                         <td>$799</td>
                         <td>
@@ -92,7 +92,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </table>
             <div>
                 <strong>Terms and Conditions</strong>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus nulla, convallis non aliquet at, scelerisque ut sem. Quisque felis mauris, auctor sit amet elementum at, gravida ut orci. Phasellus condimentum condimentum enim eu consequat. Suspendisse accumsan purus dolor.
+                Fingerstache mumblecore Vice, sriracha hashtag gluten-free aesthetic. American Apparel try-hard Odd Future, vinyl meggings authentic ennui typewriter Cosby sweater salvia. Brooklyn letterpress Bushwick, occupy High Life bicycle rights crucifix Austin McSweeney's whatever gastropub banjo asymmetrical post-ironic.
             </div>
                 
             <div style="text-align:right;">
@@ -128,15 +128,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                  fireTags($(this).val());
             }
             function fireTags(value) {
-              //ga('set', 'dimension2', value);
-              //ga('send', 'event', 'Pocet osob', 'change', value);
-              dataLayer.push({
-                  'metric2': $('#travellers')
+              dataLayer.push ({ 
+                  'event': 'travellers number changed',
+        //        'virtual url': '/destination/' + dest + '.html',
+        //        'ecommerce': {
+        //          'actionField': {
+                    'metric2': $('#travellers')
+        //          },
+        //          'detail': {
+        //            'products': [product]
+        //          }
+        //        }
               });
               console.log('fire tags');
-          }
-        });
-        });
+            }
+            
+  //          function fireTags(value) {
+              //ga('set', 'dimension2', value);
+              //ga('send', 'event', 'Pocet osob', 'change', value);
+  //            dataLayer.push({
+    //              'metric2': $('#travellers')
+      //        });
+        //      console.log('fire tags');
+        //  }
+      //  });
+       // });
     </script>
     
     <script type="text/javascript">
