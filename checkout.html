@@ -130,7 +130,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               function fireTags(value) {
                 dataLayer.push ({ 
                   'event': 'travellers number changed',
-                    'metric2': $('#travellers').val()
+                  'ecommerce': {
+                    'addTravellers': {
+                        'metric2': $('#travellers').val(),
+                        'products': [product]
+                    }
+                  }
                 });
                 console.log('fire tags');
               }
