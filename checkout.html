@@ -9,44 +9,42 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<!-- Google Tag Manager -->
-
     <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="./js/purl.js"></script>
-<script>
-
-        var product = { // List of productFieldObjects.
-                    'name': $.url().param('destination'),
-                    'id': $.url().param('destination')
-                }
-        var cat = 'Destinations/';
-        if($.url().param('destination') === 'switzerland')
-            cat += 'Europe';
-        else 
-            cat += 'NorthAmerica';
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PQW9ZX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script type="text/javascript">
+        var dest,
+            cat,
+            product,
+            dataLayer;
         
-        product.category = cat;
-
-    var dataLayer = [{
-        'ecommerce': {
-            'checkout': {
-                'actionField': {'step': 1},
-                'products': [product]
-            }
+        function getCategory (dest) {
+            return 'Destinations/' + ((dest === 'switzerland') ? 'Europe' : 'NorthAmerica');
         }
-    }];
-    
-</script>
-
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PQW9ZX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PQW9ZX');</script>
-
-<!-- End Google Tag Manager -->
+        dest = $.url().param('destination');
+        cat = getCategory(dest);
+        product = { // List of productFieldObjects.
+            'name': dest,
+            'id': dest,
+            'category': cat
+        };
+        dataLayer = [{
+            'ecommerce': {
+                'checkout': {
+                    'actionField': {'step': 1},
+                    'products': [product]
+                }
+            }
+        }];
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PQW9ZX');
+    </script>
+    <!-- End Google Tag Manager -->
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
@@ -63,7 +61,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <h1>Luxury Travel Site</h1>
         </div>
         <p class="lead">The most luxurious way to travel the world.</p>
-        
         <div class="container" id="content">
             <div class="page-header"><h1>Checkout <small>Can you feel the sun yet?</small></h1></div>
             <table class="table table-striped">
@@ -94,7 +91,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <strong>Terms and Conditions</strong>
                 Fingerstache mumblecore Vice, sriracha hashtag gluten-free aesthetic. American Apparel try-hard Odd Future, vinyl meggings authentic ennui typewriter Cosby sweater salvia. Brooklyn letterpress Bushwick, occupy High Life bicycle rights crucifix Austin McSweeney's whatever gastropub banjo asymmetrical post-ironic.
             </div>
-                
             <div style="text-align:right;">
                 <h2>$<span id="price">799</span></h2>
                 <h4>Total</h4>
@@ -108,92 +104,72 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <p>This is a demo site designed to showcase GTM.</p>
         </footer>
     </div>
-    
     <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
-     <script language="JavaScript" type="text/javascript" src="./js/AppMeasurement.js"></script>
-  
-   <script type="text/javascript">
-        $(document).ready(function() {
-          var totalCost = 799 * $('#travellers').val(),
-              destination = $.url().param('destination');
-          $('#submitButton').attr('href','./customer.html?price=' + totalCost + '&destination=' + destination);
-          $('#content td').first().text(destination);
-          $('#travellers').on('change', function() {
-              var totalCost = 799 * $('#travellers').val();
-              $('#price').html(totalCost);
-              $('#submitButton').attr('href','./customer.html?price=' + totalCost + '&destination=' + destination);
-              $('#content td').first().text(destination);
-              
-              if (totalCost > 1000) {
-                 fireTags($(this).val());
-              }
-              function fireTags(value) {
-                dataLayer.push ({ 
-                  'event': 'travellers number changed',
-                  'ecommerce': {
-                    'addTravellers': {
-                        'metric2': $('#travellers').val(),
-                        'products': [product]
-                    }
-                  }
-                });
-                console.log('fire tags');
-              }
-          });
-        });
-            
-    </script>
-    
     <script type="text/javascript">
-     function getUrlParameters(parameter, staticURL, decode){
-   /*
-    Function: getUrlParameters
-    Description: Get the value of URL parameters either from 
-                 current URL or static URL
-    Author: Tirumal
-    URL: www.code-tricks.com
-   */
-   var currLocation = (staticURL.length)? staticURL : window.location.search,
-       parArr = currLocation.split("?")[1].split("&"),
-       returnBool = true;
-   
-   for(var i = 0; i < parArr.length; i++){
-        parr = parArr[i].split("=");
-        if(parr[0] == parameter){
-            return (decode) ? decodeURIComponent(parr[1]) : parr[1];
-            returnBool = true;
-        }else{
-            returnBool = false;            
-        }
-   }
-   
-   if(!returnBool) return false;  
-};
-   
-    
-$('.remove-dest-link').click(function (event) {
-    event.preventDefault();
-    var destination = $.url().param('destination');
-    console.log('clicked', destination);
-    dataLayer.push({
-        'event': 'removeFromCart',
-        'ecommerce': {
-          'remove': {
-            'products': [{
-                'name': destination,         // Name or ID is required.
-                'id': destination
-             }]
-           }
-        },
-        'hitCallback': function() {
-            window.location = $(event.currentTarget).attr('href');
-        }
-    });
-});
-    
-     
+        $(document).ready(function() {
+            var travellers = $('#travellers').val();
+                totalCost = 799 * travellers;
+            
+            $('#submitButton').attr('href','./customer.html?price=' + totalCost + '&destination=' + dest);
+            $('#content td').first().text(dest);
+            $('#travellers').on('change', function() {
+                var currentTravellers = $('#travellers').val();
+                totalCost = 799 * currentTravellers;
+                $('#price').html(totalCost);
+                $('#submitButton').attr('href','./customer.html?price=' + totalCost + '&destination=' + dest);
+                
+                if (currentTravellers > travellers) {
+                    dataLayer.push ({ 
+                        'event': 'addToCart',
+                        'ecommerce': {
+                            'currencyCode': 'EUR',
+                            'add': {
+                                'products': [{
+                                    'name': dest,         // Name or ID is required.
+                                    'id': dest,
+                                    'category': cat,
+                                    'quantity': currentTravellers - travellers
+                                }]
+                            }
+                        }
+                    });
+                } else {
+                    dataLayer.push ({ 
+                        'event': 'removeFromCart',
+                        'ecommerce': {
+                            'currencyCode': 'EUR',
+                            'remove': {
+                                'products': [{
+                                    'name': dest,         // Name or ID is required.
+                                    'id': dest,
+                                    'category': cat,
+                                    'quantity': travellers - currentTravellers
+                                }]
+                            }
+                        }
+                    });
+                }
+            });
+        });
+        $('.remove-dest-link').click(function (event) {
+            event.preventDefault();
+            dataLayer.push({
+                'event': 'removeFromCart',
+                'ecommerce': {
+                    'remove': {
+                        'products': [{
+                            'name': dest,         // Name or ID is required.
+                            'id': dest,
+                            'category': cat,
+                            'quantity': totalCost / 799
+                         }]
+                     }
+                },
+                'hitCallback': function() {
+                    window.location = $(event.currentTarget).attr('href');
+                }
+            });
+        });
      </script>
-    
-   
 </body>
 </html>
