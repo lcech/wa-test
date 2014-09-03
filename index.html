@@ -9,72 +9,66 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PQW9ZX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-<script>
-var dataLayer = [{
-    'ecommerce': {
-        'currencyCode': 'EUR', // Local currency is optional.
-        'impressions': [{
-            'name': 'switzerland', // Name or ID is required.
-            'id': 'switzerland',
-            'list': 'Homepage banner list',
-            position: 1
-
-        }, {
-            'name': 'puertorico', // Name or ID is required.
-            'id': 'puertorico',
-            'list': 'Homepage banner list',
-            position: 2
-        }, {
-            'name': 'providence', // Name or ID is required.
-            'id': 'providence',
-            'list': 'Homepage banner list',
-            position: 3
-        }, {
-            'name': 'sanfrancisco', // Name or ID is required.
-            'id': 'sanfrancisco',
-            'list': 'Homepage banner list',
-            position: 4
-        }],
-        'promoView': {
-		'promotions': [{	// Array of promoFieldObjects.
-			'id': 'sanfrancisco', 	// ID or Name is required.
-			'name': 'sanfrancisco',
-			'creative': 'street_photo1',
-			'position': 'carousel_slide_slot4'
-		}, {
-			'id': 'providence',
-			'name': 'providence',
-			'creative': 'wall_photo1',
-			'position': 'carousel_slide_slot3'
-		}, {
-			'id': 'puertorico',
-			'name': 'puertorico',
-			'creative': 'beach_photo1',
-			'position': 'carousel_slide_slot2'
-		}, {
-			'id': 'switzerland',
-			'name': 'switzerland',
-			'creative': 'church_photo1',
-			'position': 'carousel_slide_slot1'
-		}]
-	}
-
-    }
-}];
-
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PQW9ZX');</script>
-<!-- End Google Tag Manager -->
-
-    <script type="text/javascript">if (window.location.pathname.substr(-10) != "index.html") window.location.pathname += "index.html";</script>
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PQW9ZX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script type="text/javascript">
+        var dataLayer = [{
+            'ecommerce': {
+                'currencyCode': 'EUR', // Local currency is optional.
+                'impressions': [{
+                    'name': 'switzerland', // Name or ID is required.
+                    'id': 'switzerland',
+                    'list': 'Homepage banner list',
+                    position: 1
+                }, {
+                    'name': 'puertorico', // Name or ID is required.
+                    'id': 'puertorico',
+                    'list': 'Homepage banner list',
+                    position: 2
+                }, {
+                    'name': 'providence', // Name or ID is required.
+                    'id': 'providence',
+                    'list': 'Homepage banner list',
+                    position: 3
+                }, {
+                    'name': 'sanfrancisco', // Name or ID is required.
+                    'id': 'sanfrancisco',
+                    'list': 'Homepage banner list',
+                    position: 4
+                }],
+                'promoView': {
+                    'promotions': [{    // Array of promoFieldObjects.
+                        'id': 'sanfrancisco',   // ID or Name is required.
+                        'name': 'sanfrancisco',
+                        'creative': 'street_photo1',
+                        'position': 'carousel_slide_slot4'
+                    }, {
+                        'id': 'providence',
+                        'name': 'providence',
+                        'creative': 'wall_photo1',
+                        'position': 'carousel_slide_slot3'
+                    }, {
+                        'id': 'puertorico',
+                        'name': 'puertorico',
+                        'creative': 'beach_photo1',
+                        'position': 'carousel_slide_slot2'
+                    }, {
+                        'id': 'switzerland',
+                        'name': 'switzerland',
+                        'creative': 'church_photo1',
+                        'position': 'carousel_slide_slot1'
+                    }]
+                }
+            }
+        }];
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PQW9ZX');
+    </script>
+    <!-- End Google Tag Manager -->
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
@@ -120,45 +114,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 Nunc ornare turpis eu nisi hendrerit a tempor felis ullamcorper. Integer turpis felis, consectetur quis congue tempus, porta vitae purus. Mauris condimentum orci et nunc tempor mollis.
             </div>
         </div>
-        
         <footer class="footer">
             <p class="pull-right"><a href="#">Back to top</a></p>
             <p>This is a demo site designed to showcase GTM.</p>
         </footer>
     </div>
-    
     <script src="./js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
-
     <script language="JavaScript" type="text/javascript">
-    $(".product-detail-link").click(function(event){
-	    dataLayer.push({
-                'event': 'productClick',
-                'ecommerce': {
-                  'click': {
+    $(".product-detail-link").click(function (event) {
+        event.preventDefault();
+        dataLayer.push({
+            'event': 'productClick',
+            'ecommerce': {
+                'click': {
                     'actionField': {'list': 'Homepage banner list'},      // Optional list property.
                     'products': [{
                         'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
                         'id': event.currentTarget.name.toLowerCase()
-                     }]
-                   }
-                 }
-                 ,
-                 'event': 'promotionClick',
-                 'ecommerce': {
-                 	'promoClick': {
-                 		'promotions': [{
-                 			'id': event.currentTarget.name.toLowerCase(),
-                 			'name': event.currentTarget.name.toLowerCase(),
-                 			'creative': '',    //add some code
-                 			'position': ''   //add some code
-                 		}]
-                 	}
-                 }
-            });
-    window.location.href = $(".product-detail-link").attr("href");
-     });
-
+                    }]
+                }
+            },
+            'hitCallback': function () {
+                dataLayer.push({
+                    'event': 'promotionClick',
+                    'ecommerce': {
+                        'promoClick': {
+                            'promotions': [{
+                                'id': event.currentTarget.name.toLowerCase(),
+                                'name': event.currentTarget.name.toLowerCase(),
+                                'creative': '',    //add some code
+                                'position': ''   //add some code
+                            }]
+                        }
+                    },
+                    'hitCallback': function () {
+                        window.location.href = $(".product-detail-link").attr("href");
+                    }
+                });
+            }
+        });
+    });
     </script>
 </body>
 </html>
