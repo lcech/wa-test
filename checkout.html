@@ -107,13 +107,13 @@
     <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            var travellers = $('#travellers').val();
+            var travellers = $('#travellers option:selected').val();
                 totalCost = 799 * travellers;
             
             $('#submitButton').attr('href','./customer.html?price=' + totalCost + '&destination=' + dest);
             $('#content td').first().text(dest);
             $('#travellers').on('change', function() {
-                var currentTravellers = $('#travellers').val();
+                var currentTravellers = $('#travellers option:selected').val();
                 totalCost = 799 * currentTravellers;
                 $('#price').html(totalCost);
                 $('#submitButton').attr('href','./customer.html?price=' + totalCost + '&destination=' + dest);
