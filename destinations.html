@@ -247,7 +247,7 @@
     <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         function getCategory (dest) {
-            return 'Destinations/' + (dest === 'switzerland') ? 'Europe' : 'NorthAmerica';
+            return 'Destinations/' + ((dest === 'switzerland') ? 'Europe' : 'NorthAmerica');
         }
         window.onpopstate = function (event) {
             $('#content > *').hide();
