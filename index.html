@@ -14,54 +14,55 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script type="text/javascript">
         var dataLayer = [{
-            'ecommerce': {
-                'currencyCode': 'EUR', // Local currency is optional.
-                'impressions': [{
-                    'name': 'switzerland', // Name or ID is required.
-                    'id': 'switzerland',
-                    'list': 'Homepage banner list',
-                    position: 1
-                }, {
-                    'name': 'puertorico', // Name or ID is required.
-                    'id': 'puertorico',
-                    'list': 'Homepage banner list',
-                    position: 2
-                }, {
-                    'name': 'providence', // Name or ID is required.
-                    'id': 'providence',
-                    'list': 'Homepage banner list',
-                    position: 3
-                }, {
-                    'name': 'sanfrancisco', // Name or ID is required.
-                    'id': 'sanfrancisco',
-                    'list': 'Homepage banner list',
-                    position: 4
-                }],
-                'promoView': {
-                    'promotions': [{    // Array of promoFieldObjects.
-                        'id': 'sanfrancisco',   // ID or Name is required.
-                        'name': 'sanfrancisco',
-                        'creative': 'street_photo1',
-                        'position': 'carousel_slide_slot4'
-                    }, {
-                        'id': 'providence',
-                        'name': 'providence',
-                        'creative': 'wall_photo1',
-                        'position': 'carousel_slide_slot3'
-                    }, {
-                        'id': 'puertorico',
-                        'name': 'puertorico',
-                        'creative': 'beach_photo1',
-                        'position': 'carousel_slide_slot2'
-                    }, {
+                'ecommerce': {
+                    'currencyCode': 'EUR', // Local currency is optional.
+                    'impressions': [{
+                        'name': 'switzerland', // Name or ID is required.
                         'id': 'switzerland',
-                        'name': 'switzerland',
-                        'creative': 'church_photo1',
-                        'position': 'carousel_slide_slot1'
-                    }]
+                        'list': 'Homepage banner list',
+                        position: 1
+                    }, {
+                        'name': 'puertorico', // Name or ID is required.
+                        'id': 'puertorico',
+                        'list': 'Homepage banner list',
+                        position: 2
+                    }, {
+                        'name': 'providence', // Name or ID is required.
+                        'id': 'providence',
+                        'list': 'Homepage banner list',
+                        position: 3
+                    }, {
+                        'name': 'sanfrancisco', // Name or ID is required.
+                        'id': 'sanfrancisco',
+                        'list': 'Homepage banner list',
+                        position: 4
+                    }],
+                    'promoView': {
+                        'promotions': [{    // Array of promoFieldObjects.
+                            'id': 'sanfrancisco',   // ID or Name is required.
+                            'name': 'sanfrancisco',
+                            'creative': 'street_photo1',
+                            'position': 'carousel_slide_slot4'
+                        }, {
+                            'id': 'providence',
+                            'name': 'providence',
+                            'creative': 'wall_photo1',
+                            'position': 'carousel_slide_slot3'
+                        }, {
+                            'id': 'puertorico',
+                            'name': 'puertorico',
+                            'creative': 'beach_photo1',
+                            'position': 'carousel_slide_slot2'
+                        }, {
+                            'id': 'switzerland',
+                            'name': 'switzerland',
+                            'creative': 'church_photo1',
+                            'position': 'carousel_slide_slot1'
+                        }]
+                    }
                 }
-            }
-        }];
+            }];
+        
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -119,9 +120,9 @@
             <p>This is a demo site designed to showcase GTM.</p>
         </footer>
     </div>
-    <script src="./js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
-    <script language="JavaScript" type="text/javascript">
+    <script type="text/javascript">
     $(".product-detail-link").click(function (event) {
         event.preventDefault();
         dataLayer.push({

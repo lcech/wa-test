@@ -9,52 +9,44 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PQW9ZX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>
-var cat = 'Destinations/';
-    if(window.location.hash.substr(1) === 'switzerland')
-        cat += 'Europe';
-    else 
-        cat += 'NorthAmerica';
-
-var dataLayer = [{
-    'ecommerce': {
-        'currencyCode': 'EUR', // Local currency is optional.
-        'impressions': [{
-            'name': 'switzerland', // Name or ID is required.
-            'id': 'switzerland',
-            'list': 'Default destination list',
-            position: 1
-
-        }, {
-            'name': 'puertorico', // Name or ID is required.
-            'id': 'puertorico',
-            'list': 'Default destination list',
-            position: 2
-        }, {
-            'name': 'providence', // Name or ID is required.
-            'id': 'providence',
-            'list': 'Default destination list',
-            position: 3
-        }, {
-            'name': 'sanfrancisco', // Name or ID is required.
-            'id': 'sanfrancisco',
-            'list': 'Default destination list',
-            position: 4
-        }]
-    }
-}];
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PQW9ZX');</script>
-
-<!-- End Google Tag Manager -->
-
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PQW9ZX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script type="text/javascript">
+    var dataLayer = [{
+            'ecommerce': {
+                'currencyCode': 'EUR', // Local currency is optional.
+                'impressions': [{
+                    'name': 'switzerland', // Name or ID is required.
+                    'id': 'switzerland',
+                    'list': 'Default destination list',
+                    position: 1
+                }, {
+                    'name': 'puertorico', // Name or ID is required.
+                    'id': 'puertorico',
+                    'list': 'Default destination list',
+                    position: 2
+                }, {
+                    'name': 'providence', // Name or ID is required.
+                    'id': 'providence',
+                    'list': 'Default destination list',
+                    position: 3
+                }, {
+                    'name': 'sanfrancisco', // Name or ID is required.
+                    'id': 'sanfrancisco',
+                    'list': 'Default destination list',
+                    position: 4
+                }]
+            }
+        }];
+    
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PQW9ZX');
+    </script>
+    <!-- End Google Tag Manager -->
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
@@ -71,13 +63,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <h1>Luxury Travel Site</h1>
         </div>
         <p class="lead">The most luxurious way to travel the world.</p>
-        
         <div class="container" id="content">
             <div id="content-chooser">
                 <div class="page-header">
                     <h1>Switzerland <small>The most beautiful places on Earth.</small></h1>
                 </div>
-                
                 <div class="row">
                     <ul class="thumbnails">
                         <li class="span3"><div class="thumbnail"><img src="./img/switzerland_1.jpg" alt=""></div></li>
@@ -91,7 +81,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </li>
                     </ul>
                 </div>
-                
                 <div class="page-header">
                     <h1>Puerto Rico <small>The most beautiful places on Earth.</small></h1>
                 </div>
@@ -108,7 +97,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <li class="span3"><div class="thumbnail"><img src="./img/pr_3.jpg" alt=""></div></li>
                     </ul>
                 </div>
-                
                 <div class="page-header">
                     <h1>Providence <small>The most beautiful places on Earth.</small></h1>
                 </div>
@@ -125,7 +113,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <li class="span3"><div class="thumbnail"><img src="./img/prov_3.jpg" alt=""></div></li>
                     </ul>
                 </div>
-                
                 <div class="page-header">
                     <h1>San Francisco <small>The most beautiful places on Earth.</small></h1>
                 </div>
@@ -256,74 +243,107 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <p>This is a demo site designed to showcase GTM.</p>
         </footer>
     </div>
-<script src="./js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/firetags.js"></script>
     <script type="text/javascript">
-    
-        function load(dest) {
+        function getCategory (dest) {
+            return 'Destinations/' + (dest === 'switzerland') ? 'Europe' : 'NorthAmerica';
+        }
+        window.onpopstate = function (event) {
             $('#content > *').hide();
-            if (dest != "") {
+            if (window.location.hash !== '') {
+                dest = window.location.hash.substr(1);
+                cat = getCategory(dest);
                 $('#content-loader').show();
-                setTimeout(function(){
-                    $('#content-loader').fadeOut('fast', function() {
-                            $('#content-' + dest).fadeIn();
+                setTimeout(function () {
+                    $('#content-loader').fadeOut('fast', function () {
+                        $('#content-' + dest).fadeIn();
                     });
                 }, 250);
-            }
-            else
+                dataLayer.push ({ 
+                    'event': 'virtual pageview',
+                    'virtual url': '/destination/' + dest + '.html',
+                    'ecommerce': {
+                        'actionField': {
+                            'list': 'Default destination list'
+                        },
+                        'detail': {
+                            'products': [{
+                                'id': dest, 
+                                'name': dest,
+                                'category': cat
+                            }]
+                        }
+                    }
+                });
+            } else {
                 $('#content-chooser').fadeIn();
-            
-            fireTags(dest);
-        }
-        function processHashtag() {
-            if (window.location.hash != "")
-                load(window.location.hash.substr(1));
-            else
-                load("");
-        }
-        window.onpopstate = function(e){
-            processHashtag();
+                dataLayer.push ({ 
+                    'event': 'virtual pageview',
+                    'virtual url': '/destinations.html',
+                    'ecommerce': {
+                        'currencyCode': 'EUR', // Local currency is optional.
+                        'impressions': [{
+                            'name': 'switzerland', // Name or ID is required.
+                            'id': 'switzerland',
+                            'list': 'Default destination list',
+                            position: 1
+                        }, {
+                            'name': 'puertorico', // Name or ID is required.
+                            'id': 'puertorico',
+                            'list': 'Default destination list',
+                            position: 2
+                        }, {
+                            'name': 'providence', // Name or ID is required.
+                            'id': 'providence',
+                            'list': 'Default destination list',
+                            position: 3
+                        }, {
+                            'name': 'sanfrancisco', // Name or ID is required.
+                            'id': 'sanfrancisco',
+                            'list': 'Default destination list',
+                            position: 4
+                        }]
+                    }
+                });
+            }
         };
-        
-        $(".product-detail-link").click(function(event){
-            //event.preventDefault();
+        $('.product-detail-link').click(function (event) {
+            var dest = event.currentTarget.name.toLowerCase();
             dataLayer.push({
                 'event': 'productClick',
                 'ecommerce': {
-                  'click': {
-                    'actionField': {'list': 'Default destination list'},      // Optional list property.
-                    'products': [{
-                        'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
-                        'id': event.currentTarget.name.toLowerCase(),
-                        'category': [cat]
-                     }]
-                   }
-                 }
+                    'click': {
+                        'actionField': {'list': 'Default destination list'},      // Optional list property.
+                        'products': [{
+                            'name': dest,         // Name or ID is required.
+                            'id': dest,
+                            'category': getCategory(dest)
+                        }]
+                    }
+                }
             });
         });
-        
         $('.checkout-addtocart-link').click(function (event) {
-    event.preventDefault();
-    dataLayer.push({
-        'event': 'addToCart',
-        'ecommerce': {
-          'currencyCode': 'EUR',
-          'add': {
-            'products': [{
-                'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
-                'id': event.currentTarget.name.toLowerCase(),
-                'category': [cat]
-             }]
-           }
-        },
-        'hitCallback': function() {
-            window.location = $(event.currentTarget).attr('href');
-        }
-    });
-});
-    
-        
+            var dest = event.currentTarget.name.toLowerCase();
+            event.preventDefault();
+            dataLayer.push({
+                'event': 'addToCart',
+                'ecommerce': {
+                    'currencyCode': 'EUR',
+                    'add': {
+                        'products': [{
+                            'name': dest,         // Name or ID is required.
+                            'id': dest,
+                            'category': getCategory(dest)
+                        }]
+                    }
+                },
+                'hitCallback': function() {
+                    window.location = $(event.currentTarget).attr('href');
+                }
+            });
+        });
     </script>   
 </body>
 </html>
