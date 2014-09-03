@@ -309,7 +309,14 @@
             }
         };
         $('.product-detail-link').click(function (event) {
-            var dest = event.currentTarget.name.toLowerCase();
+            var dest,
+            position,
+            currentItem;
+            
+            dest = event.currentTarget.name.toLowerCase();
+            currentItem = $(this).parent('.item');
+            position = currentItem.parent().children().index(currentItem) + 1;
+            
             dataLayer.push({
                 'event': 'productClick',
                 'ecommerce': {
@@ -318,7 +325,8 @@
                         'products': [{
                             'name': dest,         // Name or ID is required.
                             'id': dest,
-                            'category': getCategory(dest)
+                            'category': getCategory(dest),
+                            'position': position
                         }]
                     }
                 }
