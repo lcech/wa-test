@@ -130,7 +130,7 @@
         
         event.preventDefault();
         dest = currentElement.attr('name').toLowerCase();
-        position = currentElement.parent().children().index(currentElement);
+        position = currentElement.parent().children().index(currentElement) + 1;
         
         dataLayer.push({
             'event': 'productClick',
