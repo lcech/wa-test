@@ -112,45 +112,38 @@
             
             $('#submitButton').attr('href','./customer.html?price=' + totalCost + '&destination=' + dest);
             $('#content td').first().text(dest);
-            $('#travellers').on('change', function() {
-                var currentTravellers = parseInt($('#travellers option:selected').val());
+            $('#travellers').on('change', function(event) {
+                var currentTravellers,
+                    eventName,
+                    action;
+                
+                currentTravellers = parseInt($('#travellers option:selected').val());
                 totalCost = 799 * currentTravellers;
                 $('#price').html(totalCost);
                 $('#submitButton').attr('href','./customer.html?price=' + totalCost + '&destination=' + dest);
                 
                 if (currentTravellers > travellers) {
-                    dataLayer.push ({ 
-                        'event': 'addToCart',
-                        'ecommerce': {
-                            'currencyCode': 'EUR',
-                            'add': {
-                                'products': [{
-                                    'name': dest,         // Name or ID is required.
-                                    'id': dest,
-                                    'category': cat,
-                                    'quantity': currentTravellers - travellers
-                                }]
-                            }
-                        }
-                    });
-                    travellers = currentTravellers;
+                    eventName = 'addToCart';
+                    action = 'add';
                 } else {
-                    dataLayer.push ({ 
-                        'event': 'removeFromCart',
-                        'ecommerce': {
-                            'currencyCode': 'EUR',
-                            'remove': {
-                                'products': [{
-                                    'name': dest,         // Name or ID is required.
-                                    'id': dest,
-                                    'category': cat,
-                                    'quantity': travellers - currentTravellers
-                                }]
-                            }
-                        }
-                    });
-                    travellers = currentTravellers;
+                    eventName = 'removeFromCart';
+                    action = 'remove';
                 }
+                dataLayer.push ({ 
+                    'event': eventName,
+                    'ecommerce': {
+                        'currencyCode': 'EUR',
+                        action: {
+                            'products': [{
+                                'name': dest,         // Name or ID is required.
+                                'id': dest,
+                                'category': cat,
+                                'quantity': travellers - currentTravellers
+                            }]
+                        }
+                    }
+                });
+                travellers = currentTravellers;
             });
         });
         $('.remove-dest-link').click(function (event) {
