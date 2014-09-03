@@ -130,7 +130,7 @@
         
         event.preventDefault();
         dest = event.currentTarget.name.toLowerCase();
-        currentItem = $(this).parent('item');
+        currentItem = $(this).parent('.item');
         position = currentItem.parent().children().index(currentItem) + 1;
         
         dataLayer.push({
