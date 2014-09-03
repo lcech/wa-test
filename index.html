@@ -126,7 +126,7 @@
     $(".product-detail-link").click(function (event) {
         var dest,
             position,
-            currentElement = $(event.currentTarget);
+            currentItem = $(event.currentTarget).parent('item');
         
         event.preventDefault();
         dest = currentElement.attr('name').toLowerCase();
