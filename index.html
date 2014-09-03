@@ -124,15 +124,23 @@
     <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript">
     $(".product-detail-link").click(function (event) {
+        var dest,
+            position,
+            currentElement = $(event.currentTarget);
+        
         event.preventDefault();
+        dest = currentElement.attr('name').toLowerCase();
+        position = currentElement.parent().children().index(currentElement);
+        
         dataLayer.push({
             'event': 'productClick',
             'ecommerce': {
                 'click': {
                     'actionField': {'list': 'Homepage banner list'},      // Optional list property.
                     'products': [{
-                        'name': event.currentTarget.name.toLowerCase(),         // Name or ID is required.
-                        'id': event.currentTarget.name.toLowerCase()
+                        'name': dest,         // Name or ID is required.
+                        'id': dest,
+                        'position': position
                     }]
                 }
             },
@@ -142,10 +150,9 @@
                     'ecommerce': {
                         'promoClick': {
                             'promotions': [{
-                                'id': event.currentTarget.name.toLowerCase(),
-                                'name': event.currentTarget.name.toLowerCase(),
-                                'creative': '',    //add some code
-                                'position': ''   //add some code
+                                'id': dest,
+                                'name': dest,
+                                'position': position
                             }]
                         }
                     },
